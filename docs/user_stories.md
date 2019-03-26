@@ -66,13 +66,7 @@
   - Priority: 90
   - Status: Not started
  
-- US 11 Submit Bar
-  - Description: As an account-holder, I should be able to submit bar and its address, so that other users can know these details.
-  - Estimate: 1
-  - Priority: 80
-  - Status: Not started
- 
-- US 12 Search Bar
+- US 11 Search Bar
   - Description: As an account-holder, I should be able to search for nearby bars, so that I can plan my visit.
   - Estimate: 1.5
   - Priority: 80
@@ -80,18 +74,25 @@
  
 ## US related to account
  
-- US 13 Log into account
+- US 12 Log into account
   - Description: As an account-holder, I should be able to login to the BarApp account, so that I can view, search and share the drinks and search the bars.
   - Estimate: 1
   - Priority: 40
   - Status: Not started
  
-- US 14 Create account
+- US 13 Create account
   - Description: As a visitor, I should be able to create an account, so I can get access to the activities of BarApp.
   - Estimate: 1
   - Priority: 40
   - Status: Not started
- 
+
+- US 14 Update account
+  - Description: As a visitor, I should be able to update my account and profile information, so I can keep my profile current.
+  - Estimate: 1
+  - Priority: 40
+  - Status: Not started
+
+
 ## US related to reviewing
  
 - US 15 View Comments
