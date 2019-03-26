@@ -60,7 +60,7 @@
   - Priority: 70
   - Status: Not started
  
-- US 10 List New or Top 1o Drinks
+- US 10 List New or Top 10 Drinks
   - Description: As an account-holder, I should be able to list new or top 10 liked drinks, so that I will know what are the new and popular drinks.
   - Estimate: 1.5
   - Priority: 90
