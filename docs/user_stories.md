@@ -16,8 +16,8 @@
   - Priority: 80
   - Status: Not started
  
-- US 03 View picture of the drink
-  - Description: As an account-holder, I should be able to view the picture of the drink, so that I can know how the drink looks.
+- US 03 Add drink recipe
+  - Description: As an account-holder, I should be add a drink recipe, so that I view it later and share with other users.
   - Estimate: 1
   - Priority: 60
   - Status: Not started
