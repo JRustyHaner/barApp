@@ -48,8 +48,8 @@
  
 ## US related to searching
  
-- US 08 Filter Drinks by Country or Calendar Day
-  - Description: As an account-holder, I should be able to filter the drinks by country or calendar day, so that I can know the drinks available.
+- US 08 Filter Drinks by Country or Ingredients
+  - Description: As an account-holder, I should be able to filter the drinks by country or ingredients, so that I can know the drinks available.
   - Estimate: 1.5
   - Priority: 90
   - Status: Not started
@@ -106,3 +106,15 @@
   - Estimate: 1
   - Priority: 90
   - Status: Not started
+  
+- US 17 Edit Comment
+  - Description: As an account-holder, I should be able to edit the comments, so that I can edit the comments written by myself.
+  - Estimate: 1
+  - Priority: 85
+  - Status: Not started
+
+- US 18 Delete account
+  - Description: As an account-holder, I should be able to delete an account, so I can delete my account from BarApp.
+  - Estimate: 1
+  - Priority: 90
+  - Status: Not started  
