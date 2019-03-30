@@ -1,0 +1,2 @@
+class DrinkPicture < ApplicationRecord
+end
