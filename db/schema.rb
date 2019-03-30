@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_30_032137) do
+ActiveRecord::Schema.define(version: 2019_03_30_033557) do
+
+  create_table "drink_pictures", force: :cascade do |t|
+    t.string "fileName"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "drink_recipes", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "drinks", force: :cascade do |t|
     t.string "drinkName"
