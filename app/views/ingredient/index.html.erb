@@ -1,0 +1,26 @@
+<main role="main" class="container">
+<h1>Ingredients</h1>
+
+<table >
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Measurement</th>
+      <th>Ingredient</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.amount %></td>
+        <td><%= ingredient.measurement %></td>
+        <td><%= ingredient.ingredientName %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</main><!-- /.container -->
