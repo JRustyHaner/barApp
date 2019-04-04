@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'home', to: 'pages#home', as: 'home'
   get 'about', to: 'pages#about', as: 'about'
-  get 'ingredient', to: 'ingredient#index', as: 'ingredient'
+  get 'all_ingredients', to: 'ingredient#index', as: 'all_ingredients'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

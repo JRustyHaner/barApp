@@ -4,18 +4,14 @@
 <table >
   <thead>
     <tr>
-      <th>Amount</th>
-      <th>Measurement</th>
-      <th>Ingredient</th>
+      <th>Ingredients</th>
     </tr>
   </thead>
 
   <tbody>
     <% @ingredients.each do |ingredient| %>
       <tr>
-        <td><%= ingredient.amount %></td>
-        <td><%= ingredient.measurement %></td>
-        <td><%= ingredient.ingredientName %></td>
+          <td><%= ingredient.ingredientName %></td>
 
       </tr>
     <% end %>

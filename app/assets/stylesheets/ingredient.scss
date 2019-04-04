@@ -4,20 +4,3 @@
 // Border versions
 //
 // Add or remove borders all around the table and between all the columns.
-table, th, td {
-    border: 2px solid white;
-    color: white
-  }
-
-  table {
-    width: 100%;
-  }
-  
-  th {
-    height: 50px;
-    text-align: center;
-  }
-
-  td {
-    text-align: center;
-  }
