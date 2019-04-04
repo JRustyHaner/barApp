@@ -16,4 +16,13 @@ class IngredientTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  test "Measurement is present" do
+    one = ingredients(one)
+    asset true
+  end
+  test "IngredientName is present" do
+    two = ingredients(two)
+    asset true
+  end
+
 end

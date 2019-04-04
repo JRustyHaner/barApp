@@ -13,11 +13,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  amount: 1.5
-  measurement: MyString
-  ingredientName: MyString
+  amount: 0.5
+  measurement: ounce
+  ingredientName: Gin
 
 two:
   amount: 1.5
-  measurement: MyString
-  ingredientName: MyString
+  measurement: ounce
+  ingredientName: Lime Juice
