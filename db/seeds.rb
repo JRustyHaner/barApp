@@ -12,3 +12,4 @@ Ingredient_4 = Ingredient.create!(amount:2, measurement: 'ounce', ingredientName
 Ingredient_5 = Ingredient.create!(amount:1, measurement: 'ounce', ingredientName: 'Lemon Juice')
 Ingredient_6 = Ingredient.create!(amount:1, measurement: 'ounce', ingredientName: 'Simple Syrup')
 Ingredient_7 = Ingredient.create!(amount:1, measurement: 'garnish', ingredientName: 'Lemon wheel')
+Ingredient_8 = Ingredient.create!(amount:2, measurement: 'garnish', ingredientName: 'Lemon wheel')

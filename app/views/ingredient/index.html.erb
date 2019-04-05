@@ -9,9 +9,9 @@
   </thead>
 
   <tbody>
-    <% @ingredients.each do |ingredient| %>
+    <% @ingredients.map(&:ingredientName).uniq.each do |ingredient| %>
       <tr>
-          <td><%= ingredient.ingredientName %></td>
+          <td><%= ingredient %></td>
 
       </tr>
     <% end %>
