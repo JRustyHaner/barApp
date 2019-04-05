@@ -20,25 +20,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  email: MyString
-  mobile: MyString
-  password: MyString
-  address: MyString
-  city: MyString
-  state: MyString
-  zipcode: MyString
-  country: MyString
-  isBusiness: false
+  name: Sam
+  email: sam81@gmail.com
+  mobile: 7589452265
+  password: Smurfs@1581
+  address: 158 Windover Road
+  city: Memphis
+  state: Tennessee
+  zipcode: 38111
+  country: US
+  isBusiness: 'true'
 
 two:
-  name: MyString
-  email: MyString
-  mobile: MyString
-  password: MyString
-  address: MyString
-  city: MyString
-  state: MyString
-  zipcode: MyString
-  country: MyString
-  isBusiness: false
+  name: Dean
+  email: dean097@yahoo.com
+  mobile: 9013271471
+  password: Pompeii@97
+  address: 3547 Walker Ave
+  city: Memphis
+  state: Tennessee
+  zipcode: 38111
+  country: US
+  isBusiness: 'false'
