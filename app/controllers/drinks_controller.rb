@@ -1,4 +1,4 @@
-class DrinkController < ApplicationController
+class DrinksController < ApplicationController
     def index
         @drinks = Drink.all
     end
@@ -30,6 +30,11 @@ class DrinkController < ApplicationController
             flash.now[:alert] = 'Error! Unable to update Drink record.'
             render :edit
         end
+    end
+    def destroy
+        @drink = Drink.find(params[:id])
+        @drink.destroy
+        redirect_to drinks_url, notice: 'Drink was successfully removed.'
     end
 end
 
