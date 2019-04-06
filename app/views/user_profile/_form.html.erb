@@ -1,0 +1,126 @@
+
+<%= form_with model: user_profile, local: true do |form| %>
+        <div class="field">
+            <%= form.label :name %>
+            <%= form.text_field :name, class: 'form-control' %>
+            <% if user_profile.errors.full_messages_for(:name).any? %>
+                <div class="invalid-feedback">
+                    <% user_profile.errors.full_messages_for(:name).each do |error_message| %>
+                        <%= error_message %>.
+                    <% end %>   
+                </div>
+            <% end %>         
+        </div>
+
+        <div class="field">
+            <%= form.label :email %>
+            <%= form.text_field :email, class: 'form-control' %>
+            <% if user_profile.errors.full_messages_for(:email).any? %>
+                <div class="invalid-feedback">
+                    <% user_profile.errors.full_messages_for(:email).each do |error_message| %>
+                        <%= error_message %>.
+                    <% end %>   
+                </div>
+            <% end %>
+        </div>
+
+        <div class="field">
+            <%= form.label :mobile %>
+            <%= form.text_field :mobile, class: 'form-control' %>
+            <% if user_profile.errors.full_messages_for(:mobile).any? %>
+                <div class="invalid-feedback">
+                    <% user_profile.errors.full_messages_for(:mobile).each do |error_message| %>
+                        <%= error_message %>.
+                    <% end %>   
+                </div>
+            <% end %>
+        </div>
+
+        <div class="field">
+            <%= form.label :password %>
+            <%= form.text_field :password, class: 'form-control' %>
+            <% if user_profile.errors.full_messages_for(:password).any? %>
+                <div class="invalid-feedback">
+                    <% user_profile.errors.full_messages_for(:password).each do |error_message| %>
+                        <%= error_message %>.
+                    <% end %>   
+                </div>
+            <% end %>
+        </div>
+
+        <div class="field">
+            <%= form.label :address %>
+            <%= form.text_field :address, class: 'form-control' %>
+            <% if user_profile.errors.full_messages_for(:address).any? %>
+                <div class="invalid-feedback">
+                    <% user_profile.errors.full_messages_for(:address).each do |error_message| %>
+                        <%= error_message %>.
+                    <% end %>   
+                </div>
+            <% end %>
+        </div>
+
+        <div class="field">
+            <%= form.label :city %>
+            <%= form.text_field :city, class: 'form-control' %>
+            <% if user_profile.errors.full_messages_for(:city).any? %>
+                <div class="invalid-feedback">
+                    <% user_profile.errors.full_messages_for(:city).each do |error_message| %>
+                        <%= error_message %>.
+                    <% end %>   
+                </div>
+            <% end %>
+        </div>
+
+        <div class="field">
+            <%= form.label :state %>
+            <%= form.text_field :state, class: 'form-control' %>
+            <% if user_profile.errors.full_messages_for(:state).any? %>
+                <div class="invalid-feedback">
+                    <% user_profile.errors.full_messages_for(:state).each do |error_message| %>
+                        <%= error_message %>.
+                    <% end %>   
+                </div>
+            <% end %>
+        </div>
+
+        <div class="field">
+            <%= form.label :zipcode %>
+            <%= form.text_field :zipcode, class: 'form-control' %>
+            <% if user_profile.errors.full_messages_for(:zipcode).any? %>
+                <div class="invalid-feedback">
+                    <% user_profile.errors.full_messages_for(:zipcode).each do |error_message| %>
+                        <%= error_message %>.
+                    <% end %>   
+                </div>
+            <% end %>
+        </div>
+
+        <div class="field">
+            <%= form.label :country %>
+            <%= form.text_field :country, class: 'form-control' %>
+            <% if user_profile.errors.full_messages_for(:country).any? %>
+                <div class="invalid-feedback">
+                    <% user_profile.errors.full_messages_for(:country).each do |error_message| %>
+                        <%= error_message %>.
+                    <% end %>   
+                </div>
+            <% end %>
+        </div>
+
+        <div class="field">
+            <%= form.label :isBusiness %>            
+            <%= form.check_box :isBusiness, class: 'form-control' %>
+            <% if user_profile.errors.full_messages_for(:isBusiness).any? %>
+                <div class="invalid-feedback">
+                    <% user_profile.errors.full_messages_for(:isBusiness).each do |error_message| %>
+                        <%= error_message %>.
+                    <% end %>   
+                </div>
+            <% end %>
+        </div>
+
+        <div class="actions">
+            <%= form.submit 'Submit', class: 'btn btn-primary' %>
+        </div>
+    <% end %>

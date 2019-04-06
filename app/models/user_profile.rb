@@ -22,5 +22,5 @@ class UserProfile < ApplicationRecord
     validates :email, uniqueness: true, format: { with: /([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@([a-zA-Z]+)([\.])([a-zA-Z]+)/, 
     message: "only allows standard email format" }, presence: true
     validates :password, length: { in: 6..20 }, presence: true
-    validates :isBusiness, presence: true
+    validates :isBusiness, inclusion: { in: [true, false] }
 end
