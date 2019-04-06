@@ -26,6 +26,10 @@
           <li class="nav-item <%= active_class(profile_path) %>">
             <%= link_to 'Profile' , profile_path, class:'nav-link' %>
           </li>
+
+          <li class="nav-item <%= active_class(all_ingredients_path) %>">
+              <%= link_to 'Ingredients', all_ingredients_path, class: 'nav-link' %>
+           </li>
         </ul>
 
         <ul class= "navbar-nav navbar-right">

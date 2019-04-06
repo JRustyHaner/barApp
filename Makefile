@@ -23,5 +23,5 @@ test: sync
 rails test
 
 migrate:
-	rm db/*.sqlite3 db/schema.rb
+	rm -f db/*.sqlite3 db/schema.rb
 	rails db:migrate db:seed
