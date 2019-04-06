@@ -13,4 +13,5 @@
 
 class Drink < ApplicationRecord
     has_one :recipe
+
 end
