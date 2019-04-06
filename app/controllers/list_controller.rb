@@ -6,7 +6,7 @@ class ListController < ApplicationController
         @drinks = Drink.find_by(drinkName: params[:type])
         @recipe = @drinks.recipe.all()
     end
-    def occasision
+    def occasion
         @drinks = Drink.find_by(specialDate: params[:occasion])
         @recipe = @drinks.recipe.all()
     end
