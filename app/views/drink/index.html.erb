@@ -1,6 +1,6 @@
 <main role="main" class="container">
 
-<h1>drinks</h1>
+<h1>All Drinks</h1>
 
 <table>
   <thead>
@@ -20,7 +20,7 @@
         <td><%= drink.drinkLocation %></td>
         <td><%= drink.specialDate %></td>
         <td><%= drink.drinkDate %></td>
-        <td><%= link_to 'Show', drink %></td>
+        <td><%= link_to 'Show', drink_path(drink) %></td>
         <td><%= link_to 'Edit', edit_drink_path(drink) %></td>
         <td><%= link_to 'Destroy', drink, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

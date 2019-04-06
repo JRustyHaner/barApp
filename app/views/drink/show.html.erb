@@ -1,0 +1,12 @@
+<main role="main" class="container">
+
+  <p><b><%= @drink.drinkName%></b></p>
+  <p><b>drinkLocation:</b> <%= @drink.drinkLocation%></p>
+  <p><b>specialDate:</b> <%= @drink.specialDate%></p>
+  <p><b>drinkDate:</b> <%= @drink.drinkDate%></p>
+  <p>
+    <%= link_to 'Edit' , edit_drink_path(@drink) %> 
+    <%= link_to 'Back' , drinks_path %>
+  </p>
+
+</main><!-- /.container -->

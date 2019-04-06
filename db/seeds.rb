@@ -6,4 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Drink1 = Drink.create!(drinkDate: "02/11/2019", drinkLocation: 'USA', drinkName: 'Long Island Ice Tea2', specialDate: 'Dinner')
+Drink1 = Drink.create!(drinkDate: "02/11/2019", drinkLocation: 'USA', drinkName: 'Whiskey Sour', specialDate: '4th of July')
+Drink2 = Drink.create!(drinkDate: "02/11/2019", drinkLocation: 'USA', drinkName: 'Long Island Ice Tea2', specialDate: 'Dinner')
