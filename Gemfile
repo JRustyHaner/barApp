@@ -70,3 +70,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development do
   gem 'annotate'
 end
+
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
