@@ -1,0 +1,38 @@
+<main role="main" class="container">
+
+<h1>All Drinks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Drink Name</th>
+      <th>Description</th>
+      <th>Special Date</th>
+      <th>Country</th>
+      <th>Date Posted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.drinkName %></td>
+        <td><%= recipe.description%></td>
+        <td><%= recipe.specialDate %></td>
+        <td><%= recipe.drinkLocation %></td>
+        <td><%= recipe.drinkDate %></td>
+        <td><%= link_to 'Show', recipe_path(recipe) %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p><%= link_to 'New recipe', new_recipe_path %></p>
+<p><%= link_to 'Home', home_path %></p>
+
+</main><!-- /.container -->

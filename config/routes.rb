@@ -4,15 +4,15 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: 'about'
  
   # Recipe routes
-  get 'drinks', to: 'drinks#index', as: 'drinks'
-  get 'drinks/new', to: 'drinks#new', as: 'new_drink'
-  post 'drinks/create', to: 'drinks#create'
-  get 'drinks/:id/edit', to: 'drinks#edit', as: 'edit_drink'
-  get 'drinks/:id', to: 'drinks#show', as: 'drink'
-  patch 'drinks/:id', to: 'drinks#update'
-  put 'drinks/:id', to: 'drinks#update'
-  delete 'drinks/:id', to: 'drinks#destroy'
-  resource :drinks
+  get 'recipes', to: 'recipes#index', as: 'recipes'
+  get 'recipes/new', to: 'recipes#new', as: 'new_recipe'
+  post 'recipes/create', to: 'recipes#create'
+  get 'recipes/:id/edit', to: 'recipes#edit', as: 'edit_recipe'
+  get 'recipes/:id', to: 'recipes#show', as: 'recipe'
+  patch 'recipes/:id', to: 'recipes#update'
+  put 'recipes/:id', to: 'recipes#update'
+  delete 'recipes/:id', to: 'recipes#destroy'
+  resource :recipes
  
   # Ingredient routes
    get 'all_ingredients', to: 'ingredient#index', as: 'all_ingredients'

@@ -1,0 +1,27 @@
+<%= form_with model: @recipe, local: true do |form| %>
+
+  <div class="field">
+    <%= form.label :drinkName %>
+    <%= form.text_field :drinkName , class:'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :specialDate %>
+    <%= form.text_field :specialDate , class:'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :drinkLocation %>
+    <%= form.text_field :drinkLocation , class:'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :drinkDate %>
+    <%= form.text_field :drinkDate , class:'form-control' %>
+  </div>
+    
+  <div class="actions">
+    <%= form.submit "Save" %>
+  </div>
+<% end %>
+
