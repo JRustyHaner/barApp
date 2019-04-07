@@ -14,6 +14,12 @@ ActiveRecord::Schema.define(version: 2019_03_30_033557) do
 
   create_table "drink_pictures", force: :cascade do |t|
     t.string "fileName"
+ActiveRecord::Schema.define(version: 2019_04_05_204353) do
+
+  create_table "ingredients", force: :cascade do |t|
+    t.float "amount"
+    t.string "measurement"
+    t.string "ingredientName"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,6 +35,17 @@ ActiveRecord::Schema.define(version: 2019_03_30_033557) do
     t.string "specialDate"
     t.string "drinkLocation"
     t.datetime "drinkDate"
+  create_table "user_profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "mobile"
+    t.string "password"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zipcode"
+    t.string "country"
+    t.boolean "isBusiness"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

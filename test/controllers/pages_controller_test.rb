@@ -6,4 +6,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  # test "the truth" do
+  #   assert true
+  # end
 end

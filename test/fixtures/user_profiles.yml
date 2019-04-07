@@ -1,0 +1,44 @@
+# == Schema Information
+#
+# Table name: user_profiles
+#
+#  id         :integer          not null, primary key
+#  address    :string
+#  city       :string
+#  country    :string
+#  email      :string
+#  isBusiness :boolean
+#  mobile     :string
+#  name       :string
+#  password   :string
+#  state      :string
+#  zipcode    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Sam
+  email: sam81@gmail.com
+  mobile: 7589452265
+  password: Smurfs@1581
+  address: 158 Windover Road
+  city: Memphis
+  state: Tennessee
+  zipcode: 38111
+  country: US
+  isBusiness: 'true'
+
+two:
+  name: Dean
+  email: dean097@yahoo.com
+  mobile: 9013271471
+  password: Pompeii@97
+  address: 3547 Walker Ave
+  city: Memphis
+  state: Tennessee
+  zipcode: 38111
+  country: US
+  isBusiness: 'false'
