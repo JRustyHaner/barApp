@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
         @recipes = Recipe.all
     end
     def show
-        @recipe = Recipe.find(params[:id])
+        @recipe = Recipe.includes(:ingredients).find(params[:id])
         #renders 'recipe/show.html.erb'
     end
     def new
