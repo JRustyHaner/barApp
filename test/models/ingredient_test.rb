@@ -17,12 +17,14 @@ class IngredientTest < ActiveSupport::TestCase
   #   assert true
   # end
   test "Measurement is present" do
-    one = ingredients(one)
-    asset true
+    one = ingredients(:one)
+    one.measurement = nil
+    assert_not one.valid?
   end
   test "IngredientName is present" do
-    two = ingredients(two)
-    asset true
+    two = ingredients(:two)
+    two.ingredientName = nil
+    assert_not two.valid?
   end
 
 end

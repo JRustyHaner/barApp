@@ -1,22 +1,19 @@
 <main role="main" class="container">
 <h1>Ingredients</h1>
 
-<table >
+<table class="table" >
   <thead>
     <tr>
-      <th>Ingredients</th>
+      <th scope="col">Ingredients</th>
     </tr>
   </thead>
-
   <tbody>
     <% @ingredients.map(&:ingredientName).uniq.each do |ingredient| %>
       <tr>
-          <td><%= ingredient %></td>
-
+          <td><%= ingredient %></td>        
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 </main><!-- /.container -->
