@@ -14,6 +14,12 @@
 #
 
 class Recipe < ApplicationRecord
+        has_many :ingredients,
+                class_name: 'Ingredient',
+                foreign_key: 'recipe_id',
+                inverse_of: :recipes,
+                dependent: :destroy
+
     validates :drinkName, 
             uniqueness: true,
             length: { in: 5..25, wrong_length: "Drink Name needs to be between 5 and 25 characters."},

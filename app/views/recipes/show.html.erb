@@ -5,9 +5,10 @@
   <p><b>Special Occasion</b> <%= @recipe.specialDate%></p>
   <p><b>Country:</b> <%= @recipe.drinkLocation%></p>
   <p><b>Date Posted:</b> <%= @recipe.drinkDate%></p>
-  <p>
-    <%= link_to 'Edit' , edit_recipe_path(@recipe) %> 
-    <%= link_to 'Back' , recipes_path %>
-  </p>
+  
+   <p> <%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
+   <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+   <p> <%= link_to 'Back' , recipes_path %>
+  
 
 </main><!-- /.container -->

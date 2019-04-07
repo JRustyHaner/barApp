@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resource :recipes
  
   # Ingredient routes
-   get 'all_ingredients', to: 'ingredient#index', as: 'all_ingredients'
+   get 'all_ingredients', to: 'ingredients#index', as: 'all_ingredients'
 
   # user_profile routes
   get 'user_profiles', to: 'user_profile#index', as: 'profile'

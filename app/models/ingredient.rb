@@ -8,9 +8,20 @@
 #  measurement    :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  recipe_id      :integer
+#
+# Indexes
+#
+#  index_ingredients_on_recipe_id  (recipe_id)
 #
 
 class Ingredient < ApplicationRecord
+    belongs_to :recipes,
+        class_name: 'Recipe',
+        foreign_key: 'recipe_id',
+        inverse_of: :ingredients,
+        optional: true
+
     validates :amount, numericality: { greater_than: 0 }
     validates :ingredientName,
         presence: true,
