@@ -7,6 +7,7 @@
 #  drinkDate     :datetime
 #  drinkLocation :string
 #  drinkName     :string
+#  drinkType     :string
 #  fileName      :string
 #  specialDate   :string
 #  created_at    :datetime         not null
