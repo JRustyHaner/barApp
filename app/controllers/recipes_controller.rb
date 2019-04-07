@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
         #renders 'recipe/new.html.erb'
     end
     def create
-        @recipe = Recipe.new(params.require(:recipe).permit(:drinkName, :specialDate, :drinkLocation, :drinkDate, :description, :fileName ))
+        @recipe = Recipe.new(params.require(:recipe).permit(:drinkName, :drinkType, :specialDate, :drinkLocation, :drinkDate, :description, :fileName ))
         if @recipe.save
             redirect_to recipe_url(@recipe), notice: "Recipe record was successfully created."
         else
@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
     end
     def update
         @recipe = Recipe.find(params[:id])
-        if @recipe.update(params.require(:recipe).permit(:drinkName, :specialDate, :drinkLocation, :drinkDate, :description, :fileName ))
+        if @recipe.update(params.require(:recipe).permit(:drinkName,  :drinkType,  :specialDate, :drinkLocation, :drinkDate, :description, :fileName ))
             redirect_to recipe_url(@recipe), notice: "Recipe record was successfully updated."
         else
             flash.now[:alert] = 'Error! Unable to update Recipe record.'
