@@ -22,8 +22,8 @@
   - Priority: 60
   - Status: Not started
  
-- US 04 View Drink Recipes
-  - Description: As an account-holder, I should be able to view the drink recipes,so that I can know how it was prepared.
+- US 04 View Drink Recipe
+  - Description: As an account-holder, I should be able to view the drink recipe,so that I can know how it was prepared.
   - Estimate: 1
   - Priority: 60
   - Status: Not started

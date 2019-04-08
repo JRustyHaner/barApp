@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: recipes
+#
+#  id            :integer          not null, primary key
+#  description   :string
+#  drinkDate     :datetime
+#  drinkLocation :string
+#  drinkName     :string
+#  drinkType     :string
+#  fileName      :string
+#  specialDate   :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  drinkName: MyString
+  description: MyString
+  specialDate: MyString
+  drinkLocation: MyString
+  drinkDate: 2019-04-07 02:21:22
+  fileName: MyString
+
+two:
+  drinkName: MyString
+  description: MyString
+  specialDate: MyString
+  drinkLocation: MyString
+  drinkDate: 2019-04-07 02:21:22
+  fileName: MyString

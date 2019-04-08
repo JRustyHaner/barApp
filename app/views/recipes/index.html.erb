@@ -1,0 +1,36 @@
+<main role="main" class="container">
+
+<h1>All Drinks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Drink Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Special Occasion</th>
+      <th>Country</th>
+      <th>Date Posted</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= link_to recipe.drinkName, recipe_path(recipe) %></td>
+        <td><%= recipe.description%></td>
+        <td><%= recipe.drinkType %></td>
+        <td><%= recipe.specialDate %></td>
+        <td><%= recipe.drinkLocation %></td>
+        <td><%= recipe.drinkDate %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p><%= link_to 'Add a new Drink Recipe', new_recipe_path %></p>
+<p><%= link_to 'Home', home_path %></p>
+
+</main><!-- /.container -->
