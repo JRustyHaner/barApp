@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_185320) do
-
-  create_table "drinks", force: :cascade do |t|
-    t.string "drinkName"
-    t.string "specialDate"
-    t.string "drinkLocation"
-    t.datetime "drinkDate"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2019_04_08_011440) do
 
   create_table "ingredients", force: :cascade do |t|
     t.float "ammount"
@@ -30,7 +21,11 @@ ActiveRecord::Schema.define(version: 2019_04_03_185320) do
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string "description"
+    t.datetime "drinkDate"
+    t.string "drinkLocation"
+    t.string "drinkName"
+    t.string "specialDate"
+    t.string "drinkType"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

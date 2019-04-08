@@ -1,9 +1,8 @@
 class ListController < ApplicationController
     def index
-        @drinks = Drink.all()
+        @drinks = Recipe.all()
     end
     def country
-        @drinks = Drink.find_by(drinkLocation: params[:country])
-        @recipe = @drinks.recipe.all()
+        @drinks = Recipe.find_by(drinkLocation: params[:country])
     end
 end
