@@ -15,9 +15,10 @@ Ingredient_7 = Ingredient.create!(amount:1, measurement: 'garnish', ingredientNa
 Ingredient_8 = Ingredient.create!(amount:2, measurement: 'garnish', ingredientName: 'Lemon wheel')
 
 
-d1= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is very good', reviewDate: '1.1.2019')
-d2= DrinkComment.create!(likeStatus: 'No', comment: 'I dont like this drin', reviewDate: '2.1.2019')
-d3= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is Fantastic', reviewDate: '3.1.2019')
-d4= DrinkComment.create!(likeStatus: 'No', comment: 'This drink is below average', reviewDate: '4.1.2019')
-d5= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is Awesome', reviewDate: '5.1.2019')
-d6= DrinkComment.create!(likeStatus: 'No', comment: 'I dont like it', reviewDate: '6.1.2019')
+d1= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is very good', reviewDate: '2015-1-11 13:57:24')
+d2= DrinkComment.create!(likeStatus: 'No', comment: 'I dont like this drin', reviewDate: '2015-1-11 13:57:24')
+d3= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is Fantastic', reviewDate: '2015-1-11 13:57:24')
+d4= DrinkComment.create!(likeStatus: 'No', comment: 'This drink is below average', reviewDate: '2015-1-11 13:57:24')
+d5= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is Awesome', reviewDate: '2015-1-11 13:57:24')
+d6= DrinkComment.create!(likeStatus: 'No', comment: 'I dont like it', reviewDate: '2015-1-11 13:57:24')
+d7= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is much better', reviewDate: '2015-1-11 13:57:24')
