@@ -29,5 +29,6 @@ Rails.application.routes.draw do
   get '/list/ingredient/:ingredient', to: 'list#ingredient', as: 'list_by_ingredient'
   get '/list/type/:type', to: 'list#type', as: 'list_by_type'
   get '/list/occasion/:occasion', to: 'list#occasion', as: 'list_by_occasion'
-
+  get '/list/top', to: 'list#top', as: 'list_top_ten'
+  get '/list/new', to: 'list#new', as: 'list_new'
 end
