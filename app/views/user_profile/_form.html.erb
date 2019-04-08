@@ -119,27 +119,20 @@
                 </div>
             <% end %>
         </div>
-
-        <fieldset class="form-group">
-        <legend class="field-name">Role</legend>
-     
-          <div class="form-check">
-            <%= form.radio_button :role, 'user', :checked => true, class:"form-check-input" %>
-            <%= label :role, 'User' %>
-          </div> 
-          <div class="form-check">
-            <%= form.radio_button :role, 'admin', class:"form-check-input" %>
-            <%= label :role, 'Admin' %>
-          </div> 
-          <% if user_profile.errors.full_messages_for(:role).any? %>
+            
+        <div class="field">
+            <%= 'Select one of the roles below' %><br>
+            <%= form.radio_button :role, 'user', :checked => true, class:"form-control" %><%= label :role_user, 'User' %>
+            <%= form.radio_button :role, 'admin', class:"form-control" %><%= label :role_admin, 'Admin' %>            
+            <% if user_profile.errors.full_messages_for(:role).any? %>
                 <div class="invalid-feedback">
                     <% user_profile.errors.full_messages_for(:role).each do |error_message| %>
                         <%= error_message %>.
                     <% end %>   
                 </div>
             <% end %>
-        </fieldset>
-
+        </div>
+        
         <div class="actions">
             <%= form.submit 'Submit', class: 'btn btn-primary' %>
         </div>

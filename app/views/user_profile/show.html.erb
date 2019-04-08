@@ -1,0 +1,27 @@
+<% provide(:title, 'User Profile') %>
+
+    <h1>Profile Information</h1>
+
+    <p><b>Name:</b> <%= @user_profile.name %></p>
+
+    <p><b>Address:</b> <%= @user_profile.address %></p>
+
+    <p><b>City:</b> <%= @user_profile.city %></p>
+
+    <p><b>State:</b> <%= @user_profile.state %></p>
+
+    <p><b>ZipCode:</b> <%= @user_profile.zipcode %></p>
+
+    <p><b>Country:</b> <%= @user_profile.country %></p>
+
+    <p><b>Mobile:</b> <%= @user_profile.mobile %></p>
+
+    <p><b>Email:</b> <%= @user_profile.email %></p>
+
+    <p><b>IsBusiness:</b> <%= @user_profile.isBusiness %></p>
+
+    <p><b>Role:</b> <%= @user_profile.role %></p>
+  
+    <p>
+        <%= link_to 'Back', profile_path %>
+    </p>
