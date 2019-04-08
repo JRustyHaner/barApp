@@ -3,9 +3,9 @@ class ListController < ApplicationController
         @drinks = Recipe.all()
     end
     def type
-        @drinks = Recipe.find_by(drinkName: params[:type])
+        @drinks = Recipe.where(drinkType: params[:type])
     end
     def occasion
-        @drinks = Recipe.find_by(specialDate: params[:occasion])
+        @drinks = Recipe.where(specialDate: params[:occasion])
     end
 end
