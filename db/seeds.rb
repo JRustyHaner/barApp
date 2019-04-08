@@ -13,3 +13,11 @@ Ingredient_5 = Ingredient.create!(amount:1, measurement: 'ounce', ingredientName
 Ingredient_6 = Ingredient.create!(amount:1, measurement: 'ounce', ingredientName: 'Simple Syrup')
 Ingredient_7 = Ingredient.create!(amount:1, measurement: 'garnish', ingredientName: 'Lemon wheel')
 Ingredient_8 = Ingredient.create!(amount:2, measurement: 'garnish', ingredientName: 'Lemon wheel')
+
+
+d1= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is very good', reviewDate: '1.1.2019')
+d2= DrinkComment.create!(likeStatus: 'No', comment: 'I dont like this drin', reviewDate: '2.1.2019')
+d3= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is Fantastic', reviewDate: '3.1.2019')
+d4= DrinkComment.create!(likeStatus: 'No', comment: 'This drink is below average', reviewDate: '4.1.2019')
+d5= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is Awesome', reviewDate: '5.1.2019')
+d6= DrinkComment.create!(likeStatus: 'No', comment: 'I dont like it', reviewDate: '6.1.2019')
