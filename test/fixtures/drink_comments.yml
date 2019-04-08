@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: drink_comments
+#
+#  id         :integer          not null, primary key
+#  comment    :string
+#  likeStatus :string
+#  reviewDate :datetime
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  likeStatus: MyString
+  comment: MyString
+  reviewDate: 2019-04-08 15:21:31
+
+two:
+  likeStatus: MyString
+  comment: MyString
+  reviewDate: 2019-04-08 15:21:31

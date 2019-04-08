@@ -10,12 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_05_204353) do
+ActiveRecord::Schema.define(version: 2019_04_08_152130) do
+
+  create_table "drink_comments", force: :cascade do |t|
+    t.string "likeStatus"
+    t.string "comment"
+    t.datetime "reviewDate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "ingredients", force: :cascade do |t|
     t.float "amount"
     t.string "measurement"
     t.string "ingredientName"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "recipe_id"
+    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "drinkName"
+    t.string "description"
+    t.string "specialDate"
+    t.string "drinkLocation"
+    t.datetime "drinkDate"
+    t.string "fileName"
+    t.string "drinkType"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
