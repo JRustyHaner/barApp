@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_05_204353) do
+ActiveRecord::Schema.define(version: 2019_04_08_014029) do
+
+  create_table "drink_comments", force: :cascade do |t|
+    t.string "likeStatus"
+    t.string "comment"
+    t.datetime "reviewDate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "ingredients", force: :cascade do |t|
     t.float "amount"
