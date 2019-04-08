@@ -3,26 +3,19 @@
 # Table name: recipes
 #
 #  id            :integer          not null, primary key
-<<<<<<< HEAD
 #  description   :string
-=======
->>>>>>> iss2
 #  drinkDate     :datetime
 #  drinkLocation :string
 #  drinkName     :string
 #  drinkType     :string
-<<<<<<< HEAD
 #  fileName      :string
-=======
->>>>>>> iss2
 #  specialDate   :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
 
 class Recipe < ApplicationRecord
-<<<<<<< HEAD
-        has_many :ingredients,
+    has_many :ingredients,
                 class_name: 'Ingredient',
                 foreign_key: 'recipe_id',
                 inverse_of: :recipes,
@@ -45,6 +38,4 @@ class Recipe < ApplicationRecord
     validates :specialDate, format: { with: /[A-Za-z0-9 ]/, only_letters: "Special Date should only have letters, numbers, and spaces." }
     validates :fileName, format: { with: /[A-Za-z0-9]/, allow_blank: true, only_letters: "Special Date should only have letters and numbers." }
 
-=======
->>>>>>> iss2
 end

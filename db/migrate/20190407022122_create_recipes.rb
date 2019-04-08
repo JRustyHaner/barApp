@@ -7,6 +7,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.string :drinkLocation
       t.datetime :drinkDate
       t.string :fileName
+      t.string :drinkType
 
       t.timestamps
     end
