@@ -3,6 +3,8 @@ class ListController < ApplicationController
         @drinks = Recipe.all()
     end
     def country
-        @drinks = Recipe.find_by(drinkLocation: params[:country])
+        @drinks = Recipe.where(drinkLocation: params[:country])
+    end
+    def ingredients
     end
 end
