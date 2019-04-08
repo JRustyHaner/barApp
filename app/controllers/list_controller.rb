@@ -1,13 +1,11 @@
 class ListController < ApplicationController
     def index
-        @drinks = Drink.all()
+        @drinks = Recipe.all()
     end
     def top
-        @drinks = Drink.find_by(drinkName: params[:top])
-        @recipe = @drinks.recipe.all()
+        
     end
     def new
-        @drinks = Drink.find(:all, :order => "id desc", :limit => 10).reverse
-        @recipe = @drinks.recipe.all()
+        @drinks = Recipe.order(created_at: :asc).reverse_order.limit(10)
     end
 end
