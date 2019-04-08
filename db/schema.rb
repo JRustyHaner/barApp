@@ -10,27 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_182826) do
+ActiveRecord::Schema.define(version: 2019_04_08_013102) do
 
-  create_table "drink_recipes", force: :cascade do |t|
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "drinks", force: :cascade do |t|
+  create_table "recipes", force: :cascade do |t|
+    t.datetime "drinkDate"
+    t.string "drinkLocation"
     t.string "drinkName"
     t.string "specialDate"
-    t.string "drinkLocation"
-    t.datetime "drinkDate"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "ingredients", force: :cascade do |t|
-    t.float "ammount"
-    t.string "measurement"
-    t.string "ingredientName"
+    t.string "drinkType"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

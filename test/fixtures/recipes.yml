@@ -1,11 +1,12 @@
 # == Schema Information
 #
-# Table name: drinks
+# Table name: recipes
 #
 #  id            :integer          not null, primary key
 #  drinkDate     :datetime
 #  drinkLocation :string
 #  drinkName     :string
+#  drinkType     :string
 #  specialDate   :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
@@ -14,13 +15,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  drinkDate: 2019-04-08 01:31:02
+  drinkLocation: MyString
   drinkName: MyString
   specialDate: MyString
-  drinkLocation: MyString
-  drinkDate: 2019-04-03 18:09:53
+  drinkType: MyString
 
 two:
+  drinkDate: 2019-04-08 01:31:02
+  drinkLocation: MyString
   drinkName: MyString
   specialDate: MyString
-  drinkLocation: MyString
-  drinkDate: 2019-04-03 18:09:53
+  drinkType: MyString

@@ -1,13 +1,11 @@
 class ListController < ApplicationController
     def index
-        @drinks = Drink.all()
+        @drinks = Recipe.all()
     end
     def type
-        @drinks = Drink.find_by(drinkName: params[:type])
-        @recipe = @drinks.recipe.all()
+        @drinks = Recipe.find_by(drinkName: params[:type])
     end
     def occasion
-        @drinks = Drink.find_by(specialDate: params[:occasion])
-        @recipe = @drinks.recipe.all()
+        @drinks = Recipe.find_by(specialDate: params[:occasion])
     end
 end
