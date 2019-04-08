@@ -11,6 +11,7 @@
 #  mobile     :string
 #  name       :string
 #  password   :string
+#  role       :string
 #  state      :string
 #  zipcode    :string
 #  created_at :datetime         not null
