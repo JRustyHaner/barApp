@@ -2,20 +2,31 @@
 
   <p><h2><%= @recipe.drinkName%></h2></p>
   <p><b><%= @recipe.description %></b></p>
-  <p><b>Type of Drink:</b> <%= @recipe.drinkType%></p>
-  <p><b>Special Occasion:</b> <%= @recipe.specialDate%></p>
-  <p><b>Country:</b> <%= @recipe.drinkLocation%></p>
-  <p><b>Date Posted:</b> <%= @recipe.drinkDate%></p>
-
-  <% @recipe.ingredients.each do |ingredient| %>
+  <div align="center">
+    <p>
+      <b>Type of Drink:</b><%= @recipe.drinkType%>
+    </p>
+    <p>  
+      <b>Special Occasion:</b> <%= @recipe.specialDate%>
+    </p>
+    <p>
+      <b>Country:</b> <%= @recipe.drinkLocation%>
+    </p>
+    <p>  
+      <b>Date Posted:</b> <%= @recipe.drinkDate%>
+    </p>
+  </div>   
+  
+    <% @recipe.ingredients.each do |ingredient| %>
 
     <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
-  <% end %>  
+    <% end %>  
+  </div>  
 
-
+<div align="center">
    <p> <%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
    <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %></p>
    <p> <%= link_to 'Back' , recipes_path %>
-  
+</div>  
 
 </main><!-- /.container -->
