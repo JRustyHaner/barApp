@@ -7,16 +7,14 @@
             <th scope="col">Drink Name</th>
             <th scope="col">Location</th>
             <th scope="col">Date Added</th>
-            <th scope="col">Recipe</th>
         </tr>
     </thead>
     <tbody>
         <% @drinks.each do |drinks|%>
         <tr>
-            <th scope="row"><%=  drinks.drinkName %></th>
+            <th scope="row"><%= link_to drinks.drinkName, recipe_path(drinks) %></th>
             <th><%= drinks.drinkLocation %></th>
             <th><%= drinks.drinkDate %></th>
-            <th>Recipe</th>
 
         </tr>
         <% end %>

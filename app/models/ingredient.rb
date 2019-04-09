@@ -3,16 +3,11 @@
 # Table name: ingredients
 #
 #  id             :integer          not null, primary key
-<<<<<<< HEAD
 #  amount         :float
-=======
-#  ammount        :float
->>>>>>> iss2
 #  ingredientName :string
 #  measurement    :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-<<<<<<< HEAD
 #  recipe_id      :integer
 #
 # Indexes
@@ -36,9 +31,4 @@ class Ingredient < ApplicationRecord
     validates :measurement, presence: true, 
         inclusion: { in: %w(teaspoon tablespoon ounce cup pint jigger dash garnish) }
 
-=======
-#
-
-class Ingredient < ApplicationRecord
->>>>>>> iss2
 end
