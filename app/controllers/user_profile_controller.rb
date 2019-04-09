@@ -24,8 +24,6 @@ class UserProfileController < ApplicationController
         if logged == 'true'
             $logged_in = 'false'
             redirect_to home_url, notice: "Logged Out Successfully."
-        else
-            redirect_to profile_url, alert: "Error: LogOut Unsuccessful."
         end
     end 
 

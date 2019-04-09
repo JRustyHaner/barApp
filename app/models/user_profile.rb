@@ -19,6 +19,16 @@
 #
 
 class UserProfile < ApplicationRecord
+    has_many :reviews,
+        class_name: 'DrinkComment',
+        foreign_key: 'user_profile_id',
+        inverse_of: :reviewers,
+        dependent: :destroy
+    has_many :recipes,
+        class_name: 'Recipe',
+        foreign_key: 'user_profile_id',
+        inverse_of: :drinkers,
+        dependent: :destroy    
     validates :name, length: { maximum: 50 }, presence: true
     validates :email, uniqueness: true, format: { with: /([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@([a-zA-Z]+)([\.])([a-zA-Z]+)/, 
     message: "only allows standard email format" }, presence: true
