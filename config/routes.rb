@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   # drink_recipe routes
   get 'all_ingredients', to: 'ingredient#index', as: 'all_ingredients'
 
+  #drink_comments
+
+  get 'drink_comments', to 'drink_comment#index', as: drink_comments
+
   # user_profile routes
   get 'user_profiles', to: 'user_profile#index', as: 'profile'
   post 'user_profiles', to: 'user_profile#create'
