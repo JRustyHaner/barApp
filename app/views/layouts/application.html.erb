@@ -21,20 +21,13 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item <%= active_class(home_path) %>">
             <%= link_to 'Home', home_path, class:'nav-link' %>
-          </li>
-            <li class="nav-item <%= active_class(about_path) %>">
-              <%= link_to 'About', about_path, class: 'nav-link' %>
-           </li>
-
-        
-          <li class="nav-item <%= active_class(profile_path) %>">
-            <%= link_to 'Profile' , profile_path, class:'nav-link' %>
+          </li>    
           </li>
 
           <li class="nav-item <%= active_class(all_ingredients_path) %>">
               <%= link_to 'Ingredients', all_ingredients_path, class: 'nav-link' %>
            </li>
-        
+        <!--
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Recipes
@@ -44,6 +37,7 @@
             <a class="dropdown-item" href=<%= new_recipe_path %>>Add a Drink Recipe.</a>
           </div>
         </div>
+        -->
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Lists
@@ -56,9 +50,19 @@
         </ul>
 
         <ul class= "navbar-nav navbar-right">
+        <% if $logged_in == 'true' %>          
+          <li class="nav-item <%= active_class(logout_path) %>">
+            <%= link_to 'LogOut' , logout_path, class:'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item <%= active_class(login_path) %>">
+            <%= link_to 'Login' , login_path, class:'nav-link' %>
+          </li>
           <li class="nav-item <%= active_class(new_profile_path) %>">
             <%= link_to 'SignUp' , new_profile_path, class:'nav-link' %>
           </li>
+        <% end %>
+
         </ul>
 
       </div>

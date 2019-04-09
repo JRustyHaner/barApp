@@ -11,6 +11,7 @@
 #  mobile     :string
 #  name       :string
 #  password   :string
+#  role       :string
 #  state      :string
 #  zipcode    :string
 #  created_at :datetime         not null
@@ -30,6 +31,7 @@ one:
   zipcode: 38111
   country: US
   isBusiness: 'true'
+  role: 'user'
 
 two:
   name: Dean
@@ -42,3 +44,4 @@ two:
   zipcode: 38111
   country: US
   isBusiness: 'false'
+  role: 'admin' 

@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2019_04_09_015129) do
     t.boolean "isBusiness"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
   end
 
 end
