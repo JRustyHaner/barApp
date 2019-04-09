@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_152130) do
+ActiveRecord::Schema.define(version: 2019_04_09_015129) do
 
   create_table "drink_comments", force: :cascade do |t|
     t.string "likeStatus"
@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(version: 2019_04_08_152130) do
     t.datetime "reviewDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "recipe_id"
+    t.integer "userprofile_id"
+    t.index ["recipe_id"], name: "index_drink_comments_on_recipe_id"
+    t.index ["userprofile_id"], name: "index_drink_comments_on_userprofile_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -26,6 +30,22 @@ ActiveRecord::Schema.define(version: 2019_04_08_152130) do
     t.string "ingredientName"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "recipe_id"
+    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "drinkName"
+    t.string "description"
+    t.string "specialDate"
+    t.string "drinkLocation"
+    t.datetime "drinkDate"
+    t.string "fileName"
+    t.string "drinkType"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "userprofile_id"
+    t.index ["userprofile_id"], name: "index_recipes_on_userprofile_id"
   end
 
   create_table "user_profiles", force: :cascade do |t|
@@ -41,6 +61,7 @@ ActiveRecord::Schema.define(version: 2019_04_08_152130) do
     t.boolean "isBusiness"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
   end
 
 end

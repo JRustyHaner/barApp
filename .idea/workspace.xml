@@ -2,9 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ded2d04-f9d9-4e66-b5b1-98613da959dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/definitions.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/definitions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/user_stories.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/user_stories.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/ingredient.coffee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/user_profile.coffee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/ingredient.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/user_profile.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/ingredient_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/user_profile_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/helpers/ingredient_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/helpers/user_profile_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/ingredient.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/user_profile.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/ingredient/index.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/user_profile/_form.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/user_profile/index.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/user_profile/new.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20190401202658_create_ingredients.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20190405204353_create_user_profiles.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/wireframes/BarAppViewIngredientsWF.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/wireframes/wireframes_BarApp.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/controllers/ingredient_controller_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/controllers/user_profile_controller_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/fixtures/ingredients.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/fixtures/user_profiles.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/models/ingredient_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/models/user_profile_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pages_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controllers/pages_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/pages_controller_test.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -20,7 +50,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/definitions.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -55,6 +85,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -71,10 +102,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -180,16 +211,17 @@
       <updated>1552932794676</updated>
       <workItem from="1552932799090" duration="424000" />
       <workItem from="1553537380803" duration="73000" />
+      <workItem from="1554602465278" duration="33000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="497000" />
+    <option name="totallyTimeSpent" value="530000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536913" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2555644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
