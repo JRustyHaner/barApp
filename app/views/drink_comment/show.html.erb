@@ -16,6 +16,9 @@
   <b> ReviewDate: </b><%=  @drink_comments.reviewDate %>
 </p>
 
-
+<p>
+ <%= link_to 'Edit', edit_drink_comment_path(@drink_comments) %>
+ <%= link_to 'Back', drink_comments_path %>
+</p>
 
 </main><!-- /.container -->

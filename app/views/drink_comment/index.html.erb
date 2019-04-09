@@ -16,10 +16,19 @@
                     <td> <%= question.likeStatus %></td>
                     <td> <%= question.comment %></td>
                     <td> <%= question.reviewDate %></td>
+                    <td> 
+                    <%= link_to 'Show', drink_comment_path(question)%>  
+                    <%= link_to 'Edit', edit_drink_comment_path(question)%> 
+                    <%= link_to 'Destroy',drink_comment_path(question), method: :delete%>
+                    <td> 
 
                 </tr>
             <% end %>
         </tbody>
     </table>
+
+    <p>
+        <%= link_to 'New Drink Comment', new_drink_comment_path %>
+    </p>
 
 </main><!-- /.container -->
