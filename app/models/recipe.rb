@@ -2,16 +2,21 @@
 #
 # Table name: recipes
 #
-#  id            :integer          not null, primary key
-#  description   :string
-#  drinkDate     :datetime
-#  drinkLocation :string
-#  drinkName     :string
-#  drinkType     :string
-#  fileName      :string
-#  specialDate   :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id             :integer          not null, primary key
+#  description    :string
+#  drinkDate      :datetime
+#  drinkLocation  :string
+#  drinkName      :string
+#  drinkType      :string
+#  fileName       :string
+#  specialDate    :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  userprofile_id :integer
+#
+# Indexes
+#
+#  index_recipes_on_userprofile_id  (userprofile_id)
 #
 
 class Recipe < ApplicationRecord
@@ -20,6 +25,16 @@ class Recipe < ApplicationRecord
                 foreign_key: 'recipe_id',
                 inverse_of: :recipes,
                 dependent: :destroy
+    has_many :reviews,
+        class_name: 'DrinkComment',
+        foreign_key: 'recipe_id',
+        inverse_of: :recipes,
+        dependent: :destroy
+    belongs_to :drinkers,
+                class_name: 'UserProfile',
+                foreign_key: 'user_profile_id',
+                inverse_of: :recipes,
+                optional: true
 
     validates :drinkName, 
             uniqueness: true,
