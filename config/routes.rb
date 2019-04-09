@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   #drink_comments
 
   get 'drink_comments', to: 'drink_comment#index', as: 'drink_comments'
+  get 'drink_comments/:id', to: 'drink_comment#show', as: 'drink_comment' 
 
   # user_profile routes
   get 'user_profiles', to: 'user_profile#index', as: 'profile'
