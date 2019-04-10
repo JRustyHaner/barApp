@@ -32,8 +32,8 @@ class Recipe < ApplicationRecord
         dependent: :destroy
     belongs_to :drinkers,
                 class_name: 'UserProfile',
-                foreign_key: 'user_profile_id',
-                inverse_of: :recipes,
+                foreign_key: 'userprofile_id',
+                inverse_of: :drinks,
                 optional: true
 
     validates :drinkName, 

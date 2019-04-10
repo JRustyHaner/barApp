@@ -18,14 +18,14 @@
 #
 
 class DrinkComment < ApplicationRecord
-    belongs_to :reviewers,
+    belongs_to :commenters,
         class_name: 'UserProfile',
-        foreign_key: 'recipe_id',
-        inverse_of: :reviews,
+        foreign_key: 'userprofile_id',
+        inverse_of: :comments,
         optional: true
     belongs_to :recipes,
         class_name: 'Recipe',
-        foreign_key: 'user_profile_id',
+        foreign_key: 'recipe_id',
         inverse_of: :reviews,
         optional: true
     validates :comment, length: { maximum: 100 }

@@ -19,14 +19,14 @@
 #
 
 class UserProfile < ApplicationRecord
-    has_many :reviews,
+    has_many :comments,
         class_name: 'DrinkComment',
-        foreign_key: 'user_profile_id',
-        inverse_of: :reviewers,
+        foreign_key: 'userprofile_id',
+        inverse_of: :commenters,
         dependent: :destroy
-    has_many :recipes,
+    has_many :drinks,
         class_name: 'Recipe',
-        foreign_key: 'user_profile_id',
+        foreign_key: 'userprofile_id',
         inverse_of: :drinkers,
         dependent: :destroy    
     validates :name, length: { maximum: 50 }, presence: true
