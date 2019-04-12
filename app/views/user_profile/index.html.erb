@@ -1,7 +1,12 @@
-<% provide(:title, 'User Profile') %>
+<% provide(:title, 'User Index Page') %>
 
-  <h1>User Profile</h1>
+  <h2>Welcome <%= @user_profile.name %></h2>
 
-<p>
-    <%= link_to 'New User', new_profile_path %> 
-</p>    
+  <p>
+      <%= link_to 'Profile' , show_profile_path(@user_profile) %>
+  </p>
+  
+  <p>
+        <%= link_to 'Recipes', recipes_path %>
+  </p>
+   

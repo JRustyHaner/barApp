@@ -1,0 +1,2 @@
+module DrinkCommentHelper
+end

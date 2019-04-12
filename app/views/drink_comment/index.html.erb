@@ -1,0 +1,34 @@
+<main role="main" class="container">
+    <h1>Drink Comment</h1>
+
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th scope="col">likeStatus</th>
+                <th scope="col">comment</th>
+                <th scope="col">reviewDate</th>  
+                <th scope="col"></th>          
+            </tr>
+        </thead>
+        <tbody>
+            <% @drink_comments.each do |question| %>
+                <tr>
+                    <td> <%= question.likeStatus %></td>
+                    <td> <%= question.comment %></td>
+                    <td> <%= question.reviewDate %></td>
+                    <td> 
+                    <%= link_to 'Show', drink_comment_path(question)%>  
+                    <%= link_to 'Edit', edit_drink_comment_path(question)%> 
+                    <%= link_to 'Destroy',drink_comment_path(question), method: :delete%>
+                    </td> 
+
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+    <p>
+        <%= link_to 'New Drink Comment', new_drink_comment_path %>
+    </p>
+
+</main><!-- /.container -->

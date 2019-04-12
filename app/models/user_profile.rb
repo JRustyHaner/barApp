@@ -11,6 +11,7 @@
 #  mobile     :string
 #  name       :string
 #  password   :string
+#  role       :string
 #  state      :string
 #  zipcode    :string
 #  created_at :datetime         not null
@@ -18,6 +19,16 @@
 #
 
 class UserProfile < ApplicationRecord
+    has_many :comments,
+        class_name: 'DrinkComment',
+        foreign_key: 'userprofile_id',
+        inverse_of: :commenters,
+        dependent: :destroy
+    has_many :drinks,
+        class_name: 'Recipe',
+        foreign_key: 'userprofile_id',
+        inverse_of: :drinkers,
+        dependent: :destroy    
     validates :name, length: { maximum: 50 }, presence: true
     validates :email, uniqueness: true, format: { with: /([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@([a-zA-Z]+)([\.])([a-zA-Z]+)/, 
     message: "only allows standard email format" }, presence: true

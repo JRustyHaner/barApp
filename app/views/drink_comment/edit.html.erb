@@ -1,0 +1,33 @@
+
+    <main role="main" class="container">
+
+    <h1>Edit New Drink Comment </h1>
+
+
+    <%= form_with model: @drink_comments, local: true do |form| %>
+        <div class ="field">
+            <%= form.label :likeStatus %>
+            <%= form.text_field :likeStatus, class: 'form-control' %>
+        </div>
+        <div class ="field">
+            <%= form.label :Comment %>
+            <%= form.text_field :comment, class: 'form-control' %>
+        </div>
+        <div class ="field">
+            <%= form.label :ReviewDate %>
+            <%= form.text_field :reviewDate, class: 'form-control' %>
+        </div>
+
+        <div class="actions">
+            <%= form.submit 'Update drink comment', class: 'btn btn-primary' %>
+        </div>
+        
+
+
+    <% end %>
+
+   <%=link_to 'Back', drink_comments_path %>
+
+
+
+    </main><!-- /.container -->
