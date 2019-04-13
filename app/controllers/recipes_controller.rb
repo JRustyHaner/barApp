@@ -1,9 +1,12 @@
 class RecipesController < ApplicationController
     def index
-        @recipes = Recipe.all
+        @recipes = Recipe.includes(:reviews).find(params[:id])
+        
+
     end
     def show
         @recipe = Recipe.includes(:ingredients).find(params[:id])
+        @recipe_comment=Recipe.includes(:reviews).find(params[:id])
         #renders 'recipe/show.html.erb'
     end
     def new

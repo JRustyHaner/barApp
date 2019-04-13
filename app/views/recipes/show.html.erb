@@ -23,6 +23,15 @@
     <% end %>  
   </div>  
 
+</div align="center">   
+    <% @recipe_comment.reviews.each do |review| %>
+
+    <p align="center"> <b>Comment on Drink:</b> <%= review.comment %></p> 
+    <p align="center"> <b>Do you like the Drink?:   </b> <%= review.likeStatus%><p/> 
+    <p align="center"><b>Review Date: </b> <%= review.reviewDate %></p>
+    <% end %>  
+</div> 
+
 <div align="center">
    <p> <%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
    <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %></p>
