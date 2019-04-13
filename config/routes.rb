@@ -35,11 +35,11 @@ Rails.application.routes.draw do
   get 'user_profiles/logout', to: 'user_profile#logout', as: 'logout'
   get 'user_profiles/:id', to: 'user_profile#index', as: 'profile'
   get 'user_profiles', to: 'user_profile#new', as: 'new_profile'
+  get 'user_profiles/:id/show', to: 'user_profile#show', as: 'show_profile'
   post 'user_profiles', to: 'user_profile#create'
   get 'user_profiles/:id/edit', to: 'user_profile#edit', as: 'edit_profile'
-  get 'user_profiles/:id/show', to: 'user_profile#show', as: 'show_profile'
-  patch 'user_profiles/:id', to: 'user_profile#update'
-  put 'user_profiles/:id', to: 'user_profile#update'
+  patch 'user_profiles/:id/edit', to: 'user_profile#update'
+  put 'user_profiles/:id/edit', to: 'user_profile#update'
   
   
 
