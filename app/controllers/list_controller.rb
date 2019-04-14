@@ -6,6 +6,7 @@ class ListController < ApplicationController
         @drinks = Recipe.where(drinkLocation: params[:country])
     end
     def ingredients
+        @drinks = Recipe.where(ingredients: {ingredientName: params[:ingredient]})
     end
     def type
         @drinks = Recipe.where(drinkType: params[:type])
@@ -13,9 +14,7 @@ class ListController < ApplicationController
     def occasion
         @drinks = Recipe.where(specialDate: params[:occasion])
     end
-    #def top
-        
-   # end
+   
     def new
         @drinks = Recipe.order(created_at: :asc).reverse_order.limit(10)
 

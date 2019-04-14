@@ -1,0 +1,27 @@
+<main role="main" class="container">
+    <h1>BarApp - List Drinks with Ingredient</h1>
+    
+   <table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Drink Name</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date Added</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @drinks.each do |drinks|%>
+        <tr>
+            <th scope="row"><%= link_to drinks.drinkName, recipe_path(drinks) %></th>
+            <th><%= drinks.drinkLocation %></th>
+            <th><%= drinks.drinkDate %></th>
+
+        </tr>
+        <% end %>
+    </tbody>
+    
+  
+
+   </table>
+
+</main>  
