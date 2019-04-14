@@ -4,11 +4,10 @@
 #
 #  id             :integer          not null, primary key
 #  description    :string
-#  drinkDate      :datetime
+#  drinkDate      :date
 #  drinkLocation  :string
 #  drinkName      :string
 #  drinkType      :string
-#  fileName       :string
 #  specialDate    :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null

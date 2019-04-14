@@ -4,11 +4,10 @@
 #
 #  id             :integer          not null, primary key
 #  description    :string
-#  drinkDate      :datetime
+#  drinkDate      :date
 #  drinkLocation  :string
 #  drinkName      :string
 #  drinkType      :string
-#  fileName       :string
 #  specialDate    :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
@@ -26,13 +25,12 @@ one:
   description: MyString
   specialDate: MyString
   drinkLocation: MyString
-  drinkDate: 2019-04-07 02:21:22
-  fileName: MyString
+  drinkDate: 2019-04-07
 
 two:
   drinkName: MyString
   description: MyString
   specialDate: MyString
   drinkLocation: MyString
-  drinkDate: 2019-04-07 02:21:22
-  fileName: MyString
+  drinkDate: 2019-04-07
+  
