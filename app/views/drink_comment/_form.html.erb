@@ -1,0 +1,21 @@
+<%= form_with model: @drink_commnet, local: true do |form| %>
+
+  <div class="field">
+    <%= form.label "Comment on Recipe" %>
+    <%= form.text_field :Comment , class:'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Like Recipe" %>
+    <%= form.text_field :likeStatus , class:'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Date on commnet made" %>
+    <%= form.text_field :reviewDate , class:'form-control' %>
+  </div>
+   
+  <div class="actions">
+    <%= form.submit "Save" %>
+  </div>
+<% end %>

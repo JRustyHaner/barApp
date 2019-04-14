@@ -1,13 +1,14 @@
 class RecipesController < ApplicationController
-    def recipe_params
-        params.require(:recipe).permit(:drinkName, :drinkType, :specialDate, :drinkLocation, :drinkDate, :description, :image)
-    end
     def index
         @recipes = Recipe.all
+        
     end
     def show
         @recipe = Recipe.includes(:ingredients).find(params[:id])
-        #renders 'recipe/show.html.erb'
+        @recipe_comment=Recipe.includes(:reviews).find(params[:id])
+    end
+    def recipe_params
+        params.require(:recipe).permit(:drinkName, :drinkType, :specialDate, :drinkLocation, :drinkDate, :description, :image)
     end
     def new
         @recipe = Recipe.new
