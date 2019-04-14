@@ -11,7 +11,7 @@ class ListController < ApplicationController
     def type
         @drinks = Recipe.where(drinkType: params[:type])
     end
-    def occasion
+    def occasion    
         @drinks = Recipe.where(specialDate: params[:occasion])
     end
    
