@@ -21,21 +21,25 @@ Rails.application.routes.draw do
   
   get 'drink_comments', to: 'drink_comment#index', as: 'drink_comments'
   get 'drink_comments/new', to: 'drink_comment#new', as: 'new_drink_comment'
-  get 'drink_comments/:id', to: 'drink_comment#show', as: 'drink_comment' 
+  get 'drink_comments/:id', to: 'drink_comment#show', as: 'drink_comment'
+  #get 'drink_comments/:recipe_id', to: 'recipes#show', as: 'comment_recipe'
+
   post 'drink_comments', to: 'drink_comment#create'
   get 'drink_comments/:id/edit', to: 'drink_comment#edit', as: 'edit_drink_comment'
   patch 'drink_comments/:id', to: 'drink_comment#update'
   delete 'drink_comments/:id', to: 'drink_comment#destroy'
+
+  #get 'recipes/:id', to: 'recipes#show', as: 'recipe'
   
 
 
   # user_profile routes
+  get 'user_profiles/:id/show', to: 'user_profile#show', as: 'show_profile'
   get 'user_profiles/login', to: 'user_profile#login', as: 'login'
   post 'user_profiles/login', to: 'user_profile#check_account'
   get 'user_profiles/logout', to: 'user_profile#logout', as: 'logout'
   get 'user_profiles/:id', to: 'user_profile#index', as: 'profile'
   get 'user_profiles', to: 'user_profile#new', as: 'new_profile'
-  get 'user_profiles/:id/show', to: 'user_profile#show', as: 'show_profile'
   post 'user_profiles', to: 'user_profile#create'
   get 'user_profiles/:id/edit', to: 'user_profile#edit', as: 'edit_profile'
   patch 'user_profiles/:id/edit', to: 'user_profile#update'

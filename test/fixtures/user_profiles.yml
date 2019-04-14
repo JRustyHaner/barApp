@@ -18,6 +18,17 @@
 #  updated_at :datetime         not null
 #
 
+<<<<<<< HEAD
+#  role       :string
+=======
+#  role       :string           default("user")
+>>>>>>> master
+#  state      :string
+#  zipcode    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
