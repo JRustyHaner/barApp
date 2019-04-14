@@ -3,10 +3,7 @@
   <p><h2><%= @recipe.drinkName%></h2></p>
   <p><b><%= @recipe.description %></b></p>
   <div align="center">
-    <% if @recipe.image.attached? %>
-      <%= image_tag @recipe.image %> <%= "I have an image"%>
-    <% end %>
-    <%= image_tag(@recipe.image) if @recipe.image.attached? %>
+    <%= image_tag (@recipe.image.url(:medium) ) if @recipe.image.exists? %>
     <p>
       <b>Type of Drink:</b><%= @recipe.drinkType%>
     </p>
