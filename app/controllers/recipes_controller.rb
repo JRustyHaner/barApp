@@ -6,18 +6,20 @@ class RecipesController < ApplicationController
     def show
         @recipe = Recipe.includes(:ingredients).find(params[:id])
         @recipe_comment=Recipe.includes(:reviews).find(params[:id])
-        #renders 'recipe/show.html.erb'
+    end
+    def recipe_params
+        params.require(:recipe).permit(:drinkName, :drinkType, :specialDate, :drinkLocation, :drinkDate, :description, :image)
     end
     def new
         @recipe = Recipe.new
-        @recipe.drinkDate = Time.now
-        @recipe.fileName = 'None'
-        
+        @recipe.drinkDate = Time.current
         #renders 'recipe/new.html.erb'
     end
     def create
-        @recipe = Recipe.new(params.require(:recipe).permit(:drinkName, :drinkType, :specialDate, :drinkLocation, :drinkDate, :description, :fileName ))
+        @recipe = Recipe.new(params.require(:recipe).permit(:drinkName, :drinkType, :specialDate, :drinkLocation, :drinkDate, :description, :image))
+        
         if @recipe.save
+            @recipe.image.attach(params[:image])
             redirect_to recipe_url(@recipe), notice: "Recipe record was successfully created."
         else
             flash.now[:alert] = 'Error! Unable to create Recipe record.'
@@ -30,7 +32,8 @@ class RecipesController < ApplicationController
     end
     def update
         @recipe = Recipe.find(params[:id])
-        if @recipe.update(params.require(:recipe).permit(:drinkName,  :drinkType,  :specialDate, :drinkLocation, :drinkDate, :description, :fileName ))
+        if @recipe.update(params.require(:recipe).permit(:drinkName,  :drinkType,  :specialDate, :drinkLocation, :drinkDate, :description, :image)
+            )
             redirect_to recipe_url(@recipe), notice: "Recipe record was successfully updated."
         else
             flash.now[:alert] = 'Error! Unable to update Recipe record.'

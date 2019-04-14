@@ -11,7 +11,18 @@
 #  mobile     :string
 #  name       :string
 #  password   :string
+#  role       :string           default("user")
+#  state      :string
+#  zipcode    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+<<<<<<< HEAD
 #  role       :string
+=======
+#  role       :string           default("user")
+>>>>>>> master
 #  state      :string
 #  zipcode    :string
 #  created_at :datetime         not null

@@ -5,7 +5,7 @@
 #  id             :integer          not null, primary key
 #  comment        :string
 #  likeStatus     :string
-#  reviewDate     :datetime
+#  reviewDate     :date
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  recipe_id      :integer
