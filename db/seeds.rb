@@ -43,12 +43,16 @@ Recipe_1.ingredients.append Ingredient_1
 Recipe_1.ingredients.append Ingredient_2
 Recipe_1.ingredients.append Ingredient_3
 Recipe_1.reviews.append d1
+Recipe_1.reviews.append d5
+Recipe_1.reviews.append d7
 
 Recipe_2.ingredients.append Ingredient_4
 Recipe_2.ingredients.append Ingredient_5
 Recipe_2.ingredients.append Ingredient_6
 Recipe_2.ingredients.append Ingredient_7
 Recipe_2.reviews.append d2
+Recipe_2.reviews.append d4
+Recipe_2.reviews.append d6
 
 Recipe_3.ingredients.append Ingredient_8
 Recipe_3.ingredients.append Ingredient_9

@@ -4,6 +4,7 @@
     <table class="table table-sm">
         <thead>
             <tr>
+                <th scope="col">Recipe ID</th>
                 <th scope="col">likeStatus</th>
                 <th scope="col">comment</th>
                 <th scope="col">reviewDate</th>  
@@ -11,15 +12,16 @@
             </tr>
         </thead>
         <tbody>
-            <% @drink_comments.each do |question| %>
+            <% @drink_comments.each do |dr_comment| %>
                 <tr>
-                    <td> <%= question.likeStatus %></td>
-                    <td> <%= question.comment %></td>
-                    <td> <%= question.reviewDate %></td>
+                    <td> <%= dr_comment.recipe_id %></td>
+                    <td> <%= dr_comment.likeStatus %></td>
+                    <td> <%= dr_comment.comment %></td>
+                    <td> <%= dr_comment.reviewDate %></td>
                     <td> 
-                    <%= link_to 'Show', drink_comment_path(question)%>  
-                    <%= link_to 'Edit', edit_drink_comment_path(question)%> 
-                    <%= link_to 'Destroy',drink_comment_path(question), method: :delete%>
+                    <%= link_to 'Show', drink_comment_path(dr_comment)%>  
+                    <%= link_to 'Edit', edit_drink_comment_path(dr_comment)%> 
+                    <%= link_to 'Destroy',drink_comment_path(dr_comment), method: :delete%>
                     </td> 
 
                 </tr>

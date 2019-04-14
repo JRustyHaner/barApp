@@ -21,16 +21,37 @@
 
     <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
     <% end %>  
-  </div>  
+  </div> 
 
-</div align="center">   
-    <% @recipe_comment.reviews.each do |review| %>
+<div align="right">
+   <p> <%= link_to 'Add Commnet' , new_drink_comment_path(@drink_comments) %> </p>
+</div>
 
-    <p align="center"> <b>Comment on Drink:</b> <%= review.comment %></p> 
-    <p align="center"> <b>Do you like the Drink?:   </b> <%= review.likeStatus%><p/> 
-    <p align="center"><b>Review Date: </b> <%= review.reviewDate %></p>
-    <% end %>  
-</div> 
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th>Review Comment</th>
+        <th>Like Drink</th>
+        <th>Review Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @recipe_comment.reviews.each do |review|  %>
+        <tr>
+          <td><%=  review.comment  %></td>
+          <td><%=  review.likeStatus%></td>
+          <td><%=  review.reviewDate %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  
+
+
+
 
 <div align="center">
    <p> <%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>

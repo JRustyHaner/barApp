@@ -4,8 +4,14 @@
 
     <h1>New Drink Comment </h1>
 
+   
+
 
     <%= form_with model: @drink_comments, local: true do |form| %>
+        <div class ="field">
+            <%= form.label :Recipe_ID %>
+            <%= form.text_field :recipe_id, class: 'form-control' %>
+        </div>
         <div class ="field">
             <%= form.label :LikeStatus %>
             <%= form.text_field :likeStatus, class: 'form-control' %>

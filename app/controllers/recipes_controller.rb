@@ -1,8 +1,7 @@
 class RecipesController < ApplicationController
     def index
-        @recipes = Recipe.includes(:reviews).find(params[:id])
+        @recipes = Recipe.all
         
-
     end
     def show
         @recipe = Recipe.includes(:ingredients).find(params[:id])
@@ -13,6 +12,7 @@ class RecipesController < ApplicationController
         @recipe = Recipe.new
         @recipe.drinkDate = Time.now
         @recipe.fileName = 'None'
+        
         #renders 'recipe/new.html.erb'
     end
     def create

@@ -21,11 +21,15 @@ Rails.application.routes.draw do
   
   get 'drink_comments', to: 'drink_comment#index', as: 'drink_comments'
   get 'drink_comments/new', to: 'drink_comment#new', as: 'new_drink_comment'
-  get 'drink_comments/:id', to: 'drink_comment#show', as: 'drink_comment' 
+  get 'drink_comments/:id', to: 'drink_comment#show', as: 'drink_comment'
+  #get 'drink_comments/:recipe_id', to: 'recipes#show', as: 'comment_recipe'
+
   post 'drink_comments', to: 'drink_comment#create'
   get 'drink_comments/:id/edit', to: 'drink_comment#edit', as: 'edit_drink_comment'
   patch 'drink_comments/:id', to: 'drink_comment#update'
   delete 'drink_comments/:id', to: 'drink_comment#destroy'
+
+  #get 'recipes/:id', to: 'recipes#show', as: 'recipe'
   
 
 
