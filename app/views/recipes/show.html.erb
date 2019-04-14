@@ -3,10 +3,6 @@
   <p><h2><%= @recipe.drinkName%></h2></p>
   <p><b><%= @recipe.description %></b></p>
   <div align="center">
-    <% if @recipe.image.attached? %>
-      <%= image_tag @recipe.image %> <%= "I have an image"%>
-    <% end %>
-    <%= image_tag(@recipe.image) if @recipe.image.attached? %>
     <p>
       <b>Type of Drink:</b><%= @recipe.drinkType%>
     </p>
@@ -25,7 +21,33 @@
 
     <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
     <% end %>  
-  </div>  
+  </div> 
+
+<div align="right">
+   <p> <%= link_to 'Add Commnet' , new_drink_comment_path(@drink_comments) %> </p>
+</div>
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th>Review Comment</th>
+        <th>Like Drink</th>
+        <th>Review Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @recipe_comment.reviews.each do |review|  %>
+        <tr>
+          <td><%=  review.comment  %></td>
+          <td><%=  review.likeStatus%></td>
+          <td><%=  review.reviewDate %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div> 
 
 <div align="center">
     <p><%= link_to 'Like this Drink', new_drink_comment_path %></p>
