@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_14_011802) do
+ActiveRecord::Schema.define(version: 2019_04_14_200230) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_011802) do
   create_table "drink_comments", force: :cascade do |t|
     t.string "likeStatus"
     t.string "comment"
-    t.datetime "reviewDate"
+    t.date "reviewDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "recipe_id"

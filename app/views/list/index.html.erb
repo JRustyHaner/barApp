@@ -1,16 +1,6 @@
 <main role="main" class="container">
     <h1>BarApp - Index List</h1>
-    
-   <table class="table table-sm">
-    <thead>
-        <tr>
-            <th scope="col">Drink Name</th>
-            <th scope="col">Location</th>
-            <th scope="col">Date Added</th>
-        </tr>
-    </thead>
-    <tbody>
-        <%= form_tag('/list') do %>
+     <%= form_tag('/list') do %>
             <%= label_tag(:search, "Search Recipes for:") %>
             <%= text_field_tag(:search) %>
             by<%= radio_button_tag('by', 'occasion') %>Occasion
@@ -21,18 +11,29 @@
 
         <% link_to "List By Top 10", list_top_ten_path %>
         <% link_to "List by Newest", list_new_path %>
-        <% @drinks.each do |drinks|%>
-        <tr>
-            <th scope="row"><%= link_to drinks.drinkName, recipe_path(drinks) %></th>
-            <th><%= drinks.drinkLocation %></th>
-            <th><%= drinks.drinkDate %></th>
-
-        </tr>
-        <% end %>
-    </tbody>
-    
-  
-
-   </table>
+   <table class="table table-sm">
+    <thead>
+            <tr>
+                <th>Drink Name</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Special Occasion</th>
+                <th>Country</th>
+                <th>Date Posted</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @drinks.each do |drinks| %>
+            <tr>
+                <td><%= link_to drinks.drinkName, recipe_path(drinks) %></td>
+                <td><%= drinks.description%></td>
+                <td><%= drinks.drinkType %></td>
+                <td><%= drinks.specialDate %></td>
+                <td><%= drinks.drinkLocation %></td>
+                <td><%= drinks.drinkDate %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
 
 </main>  
