@@ -2,34 +2,14 @@
 
     <main role="main" class="container">
 
-    <h1>New Drink Comment </h1>
+        <h1>New Drink Comment </h1>
+
+        <%= render 'form', recipe_id: @recipe.id,  drink_comment: @drink_comments %>
 
 
-
-
-    <%= form_with model: @drink_comments, local: true do |form| %>
-      
-        <div class ="field">
-            <%= form.label :LikeStatus %>
-            <%= form.text_field :likeStatus, class: 'form-control' %>
-        </div>
-        <div class ="field">
-            <%= form.label :Comment %>
-            <%= form.text_field :comment, class: 'form-control' %>
-        </div>
-        <div class ="field">
-            <%= form.label :reviewDate %>
-            <%= form.text_field :reviewDate, class: 'form-control' %>
-        </div>
-        
-        <div class="actions">
-            <%= form.submit 'Create drink comment', class: 'btn btn-primary' %>
-        </div>
-
-
-    <% end %>
-
- <%=link_to 'Back', drink_comments_path %>
+        <p>
+            <%=link_to 'Back', drink_comments_path %>
+        </p>
 
 
 

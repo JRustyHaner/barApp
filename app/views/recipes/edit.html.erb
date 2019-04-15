@@ -1,9 +1,44 @@
 <main role="main" class="container">
-<h1>Edit Drink Recipe </h1>
+    <h1>Edit Drink Recipe </h1>
 
-<%= render 'form', recipe: @recipe %>
+    <%= render 'form', recipe: @recipe %>
 
-<%= link_to 'Back', recipe_path %>
-<%= link_to 'Home', home_path %>
+    <h2 style="margin-top: 1.5rem">Comment on Recipe </h2>
+
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                
+                <th scope="col">likeStatus</th>
+                <th scope="col">comment</th>
+                <th scope="col">reviewDate</th>  
+                <th scope="col"></th>          
+            </tr>
+        </thead>
+        <tbody>
+            <% @recipe.reviews.each do |dr_comment| %>
+                <tr>
+                    
+                    <td> <%= dr_comment.likeStatus %></td>
+                    <td> <%= dr_comment.comment %></td>
+                    <td> <%= dr_comment.reviewDate %></td>
+                    <td> 
+                    
+                        <%= link_to 'Edit', edit_drink_comment_path(dr_comment) %> 
+                        <%= link_to 'Destroy',drink_comment_path(dr_comment), method: :delete %>
+                    </td> 
+
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+    <p>
+        <%= link_to 'New Drink Comment', new_drink_comments_path(@recipe) %>
+    </p>
+
+
+    <%= link_to 'Back', recipe_path %>
+    <%= link_to 'Home', home_path %>
 
 </main><!-- /.container -->

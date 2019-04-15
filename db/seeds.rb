@@ -39,6 +39,7 @@ d7= DrinkComment.create!(likeStatus: 'Yes', comment: 'This drink is much better'
 Recipe_4.reviews.build(likeStatus: 'Yes', comment: 'This drink is much better drink. I like the falvor', reviewDate: '2015-1-11 13:57:24')
 
 
+
 Recipe_1.ingredients.append Ingredient_1
 Recipe_1.ingredients.append Ingredient_2
 Recipe_1.ingredients.append Ingredient_3

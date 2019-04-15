@@ -1,4 +1,5 @@
 <%= form_with model: @drink_commnet, local: true do |form| %>
+  <%= hidden_field_tag :recipe_id, recipe_id  %>
 
   <div class="field">
     <%= form.label "Comment on Recipe" %>
