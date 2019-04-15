@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
   # list routes
   get '/list', to: 'list#index', as: 'list_index'
+  post '/list', to: 'list#search'
   get '/list/country/:country', to: 'list#country', as: 'list_by_country'
   get '/list/ingredient/:ingredient', to: 'list#ingredient', as: 'list_by_ingredient'
   get '/list/type/:type', to: 'list#type', as: 'list_by_type'

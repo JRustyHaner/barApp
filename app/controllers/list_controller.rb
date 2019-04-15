@@ -20,4 +20,15 @@ class ListController < ApplicationController
         @drinks = Recipe.order(created_at: :asc).reverse_order.limit(10)
 
     end
+    def search
+        if params[:by] == "occasion"
+            redirect_to list_by_occasion_path(:occasion => params[:search])
+        end
+        if params[:by] == "country"
+            redirect_to list_by_country_path(:country => params[:search])
+        end
+        if params[:by] == "ingredient"
+            redirect_to list_by_ingredient_path(:ingredient => params[:search])
+        end
+    end
 end

@@ -10,6 +10,17 @@
         </tr>
     </thead>
     <tbody>
+        <%= form_tag('/list') do %>
+            <%= label_tag(:search, "Search Recipes for:") %>
+            <%= text_field_tag(:search) %>
+            by<%= radio_button_tag('by', 'occasion') %>Occasion
+            <%= radio_button_tag('by', 'country') %>Country
+            <%= radio_button_tag('by', 'ingredient') %>Ingredient
+            <%= submit_tag("Search") %>
+        <% end %>
+
+        <% link_to "List By Top 10", list_top_ten_path %>
+        <% link_to "List by Newest", list_new_path %>
         <% @drinks.each do |drinks|%>
         <tr>
             <th scope="row"><%= link_to drinks.drinkName, recipe_path(drinks) %></th>
