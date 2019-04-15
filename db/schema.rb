@@ -10,6 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2019_04_14_212622) do
+=======
 ActiveRecord::Schema.define(version: 2019_04_14_200230) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -32,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_200230) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
+>>>>>>> master
 
   create_table "drink_comments", force: :cascade do |t|
     t.string "likeStatus"
@@ -65,6 +69,10 @@ ActiveRecord::Schema.define(version: 2019_04_14_200230) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "userprofile_id"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["userprofile_id"], name: "index_recipes_on_userprofile_id"
   end
 

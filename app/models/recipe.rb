@@ -2,16 +2,20 @@
 #
 # Table name: recipes
 #
-#  id             :integer          not null, primary key
-#  description    :string
-#  drinkDate      :date
-#  drinkLocation  :string
-#  drinkName      :string
-#  drinkType      :string
-#  specialDate    :string
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  userprofile_id :integer
+#  id                 :integer          not null, primary key
+#  description        :string
+#  drinkDate          :date
+#  drinkLocation      :string
+#  drinkName          :string
+#  drinkType          :string
+#  image_content_type :string
+#  image_file_name    :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#  specialDate        :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  userprofile_id     :integer
 #
 # Indexes
 #
@@ -19,7 +23,8 @@
 #
 
 class Recipe < ApplicationRecord
-        has_one_attached :image    
+        has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+        validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/  
         has_many :ingredients,
                         class_name: 'Ingredient',
                         foreign_key: 'recipe_id',
@@ -51,6 +56,6 @@ class Recipe < ApplicationRecord
         validates :drinkLocation, format: { with: /[A-Za-z][A-Za-z][A-Za-z]/, 
                 only_letters: "Location should only have three letters."}
         validates :specialDate, format: { with: /[A-Za-z0-9 ]/, only_letters: "Special Date should only have letters, numbers, and spaces." }
-        
+        validates_attachment :image, content_type: ["image/jpeg", "image/gif", "image/png"]
 
 end
