@@ -16,10 +16,9 @@ class RecipesController < ApplicationController
         #renders 'recipe/new.html.erb'
     end
     def create
-        @recipe = Recipe.new(params.require(:recipe).permit(:drinkName, :drinkType, :specialDate, :drinkLocation, :drinkDate, :description, :image))
-        
+        @recipe = Recipe.new(recipe_params)
         if @recipe.save
-            @recipe.image.attach(params[:image])
+            
             redirect_to recipe_url(@recipe), notice: "Recipe record was successfully created."
         else
             flash.now[:alert] = 'Error! Unable to create Recipe record.'
@@ -32,8 +31,7 @@ class RecipesController < ApplicationController
     end
     def update
         @recipe = Recipe.find(params[:id])
-        if @recipe.update(params.require(:recipe).permit(:drinkName,  :drinkType,  :specialDate, :drinkLocation, :drinkDate, :description, :image)
-            )
+        if @recipe.update(recipe_params)
             redirect_to recipe_url(@recipe), notice: "Recipe record was successfully updated."
         else
             flash.now[:alert] = 'Error! Unable to update Recipe record.'
@@ -42,6 +40,7 @@ class RecipesController < ApplicationController
     end
     def destroy
         @recipe = Recipe.find(params[:id])
+        @recipe.image = nil
         @recipe.destroy
         redirect_to recipes_url, notice: 'Recipe was successfully removed.'
     end
