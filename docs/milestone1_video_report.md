@@ -1,14 +1,14 @@
 # Video Report
 
-- Project: xxx (Nickname of Project)
-- Iteration: xxx (Milestone Name; e.g., Milestone 1)
+- Project: BarApp
+- Iteration:  Milestone 1
 - Demo Video URL: <https://youtu.be/xxx> (URL for demo video)
 
 ## Who Did What
 
 - xx:xx:xx (Offset into Video; sort sequentially)
-  - Contributor: xxx (Team Member Name)
-  - Contribution: xxx (Description of Work on Display)
+  - Contributor: Kranthi  
+  - Contribution: US12: Log into Account
   - Task IDs: xxx (List of Relevant Task IDs from the Task Report)
 
 - xx:xx:xx
