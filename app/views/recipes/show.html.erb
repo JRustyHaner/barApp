@@ -51,6 +51,7 @@
 </div> 
 
 <div align="center">
+    <p> <%= link_to 'Download Recipe as PDF', show_gen_pd_fs_path(@recipe, format: :pdf) %></p>
     <p><%= link_to 'Like this Drink', new_drink_comment_path %></p>
    <p> <%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
    <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %></p>
