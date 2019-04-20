@@ -23,7 +23,9 @@
             <%= link_to 'Home', home_path, class:'nav-link' %>
           </li>    
           </li>
+
           <% if $logged_in == 'true' %> 
+
           <li class="nav-item <%= active_class(all_ingredients_path) %>">
               <%= link_to 'Ingredients', all_ingredients_path, class: 'nav-link' %>
            </li>
@@ -33,6 +35,7 @@
                   Recipes
             </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        
             <a class="dropdown-item" href=<%= new_recipe_path %>>Add a Drink Recipe.</a>
             <a class="dropdown-item" href=<%= drink_comments_path %>>View all Comments.</a>
           </div>
@@ -43,8 +46,9 @@
                   Lists
             </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+             <a class="dropdown-item" href=<%= list_top_ten_path %>>List Top 10 Recipes.</a>
             <a class="dropdown-item" href=<%= list_new_path %>>List of New Recipes</a>
-            <a class="dropdown-item" href=<%= list_index_path %>>List All Drink Recipes.</a>
+            <a class="dropdown-item" href=<%= list_index_path %>>List/Search All Drink Recipes.</a>
           </div>
           <% end %>
         </div>

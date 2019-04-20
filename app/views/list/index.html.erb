@@ -1,8 +1,18 @@
 <main role="main" class="container">
     <h1>BarApp - Index List</h1>
-    
+     <%= form_tag('/list') do %>
+            <%= label_tag(:search, "Search Recipes for:") %>
+            <%= text_field_tag(:search) %>
+            by<%= radio_button_tag('by', 'occasion') %>Occasion
+            <%= radio_button_tag('by', 'country') %>Country
+            <%= radio_button_tag('by', 'ingredient') %>Ingredient
+            <%= submit_tag("Search") %>
+        <% end %>
+
+        <% link_to "List By Top 10", list_top_ten_path %>
+        <% link_to "List by Newest", list_new_path %>
    <table class="table table-sm">
-        <thead>
+    <thead>
             <tr>
                 <th>Drink Name</th>
                 <th>Description</th>
@@ -12,7 +22,6 @@
                 <th>Date Posted</th>
             </tr>
         </thead>
-
         <tbody>
             <% @drinks.each do |drinks| %>
             <tr>
