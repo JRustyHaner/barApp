@@ -10,10 +10,8 @@ class GenPdFsController < ApplicationController
                 template: "gen_pd_fs/show.html.erb",
                 layout: "pdf.html",
                 orientation: "Landscape",
-                image_quality: 5,
-                lowquality: true,
                 zoom: 1,
-                dpi: 75
+                dpi: 6000
             end
         end
     end

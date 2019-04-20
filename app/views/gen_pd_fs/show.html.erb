@@ -3,7 +3,7 @@
   <p><h2><%= @recipe.drinkName%></h2></p>
   <p><b><%= @recipe.description %></b></p>
   <div align="center">
-    <%= image_tag (@recipe.image.url(:medium) ) if @recipe.image.exists? %>
+    <%= wicked_pdf_image_tag (@recipe.image.url(:medium) ) if @recipe.image.exists? %>
     <p>
       <b>Type of Drink:</b><%= @recipe.drinkType%>
     </p>
@@ -17,7 +17,7 @@
       <b>Date Posted:</b> <%= @recipe.drinkDate%>
     </p>
   </div>   
-  <div>
+  <div align="center">
     <% @recipe.ingredients.each do |ingredient| %>
 
     <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
