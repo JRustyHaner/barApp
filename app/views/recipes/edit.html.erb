@@ -1,5 +1,6 @@
 <main role="main" class="container">
-<h1>Edit Drink Recipe </h1>
+<% title @recipe.drinkName%>
+<h1>Edit Drink Recipe for <%= @recipe.drinkName %> </h1>
 
 <%= render 'form', recipe: @recipe %>
 

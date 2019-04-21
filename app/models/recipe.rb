@@ -56,6 +56,6 @@ class Recipe < ApplicationRecord
         validates :drinkLocation, format: { with: /[A-Za-z][A-Za-z][A-Za-z]/, 
                 only_letters: "Location should only have three letters."}
         validates :specialDate, format: { with: /[A-Za-z0-9 ]/, only_letters: "Special Date should only have letters, numbers, and spaces." }
-        validates_attachment :image, content_type: ["image/jpeg", "image/gif", "image/png"]
+        
 
 end
