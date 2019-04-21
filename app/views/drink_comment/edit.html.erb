@@ -1,14 +1,19 @@
 
     <main role="main" class="container">
 
+     
+
         <h1>Edit New Drink Comment </h1>
 
 
-        
-        
-        <%= render 'form', recipe_id: @drink_comments.recipes.id, drink_comment: @drink_comments  %>
+            <%= render 'form', recipe_id: @drink_comments.recipes.id,  drink_comment: @drink_comments %>  
+            
+            <%# = render 'form', recipe_id: @drink_comments.recipes.id, drink_comment: @drink_comments  %>
 
-        <%= link_to 'Back', drink_comments_path %>
+            <%= link_to 'Back', edit_drink_comment_path %>
+
+
+        
 
 
 

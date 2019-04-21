@@ -1,60 +1,60 @@
 <main role="main" class="container">
 
-  <p><h2><%= @recipe.drinkName%></h2></p>
-  <p><b><%= @recipe.description %></b></p>
+    <p><h2><%= @recipe.drinkName%></h2></p>
+    <p><b><%= @recipe.description %></b></p>
+    <div align="center">
+      <p>
+        <b>Type of Drink:</b><%= @recipe.drinkType%>
+      </p>
+      <p>  
+        <b>Special Occasion:</b> <%= @recipe.specialDate%>
+      </p>
+      <p>
+        <b>Country:</b> <%= @recipe.drinkLocation%>
+      </p>
+      <p>  
+        <b>Date Posted:</b> <%= @recipe.drinkDate%>
+      </p>
+    </div>   
+    
+      <% @recipe.ingredients.each do |ingredient| %>
+
+      <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
+      <% end %>  
+    </div> 
+
+
+
   <div align="center">
-    <p>
-      <b>Type of Drink:</b><%= @recipe.drinkType%>
-    </p>
-    <p>  
-      <b>Special Occasion:</b> <%= @recipe.specialDate%>
-    </p>
-    <p>
-      <b>Country:</b> <%= @recipe.drinkLocation%>
-    </p>
-    <p>  
-      <b>Date Posted:</b> <%= @recipe.drinkDate%>
-    </p>
-  </div>   
-  
-    <% @recipe.ingredients.each do |ingredient| %>
-
-    <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
-    <% end %>  
-  </div> 
-
-
-
-<div align="center">
-  <table>
-    <thead>
-      <tr>
-        <th>Review Comment</th>
-        <th>Like Drink</th>
-        <th>Review Date</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @recipe_comment.reviews.each do |review|  %>
+    <table>
+      <thead>
         <tr>
-          <td><%=  review.comment  %></td>
-          <td><%=  review.likeStatus%></td>
-          <td><%=  review.reviewDate %></td>
+          <th>Review Comment</th>
+          <th>Like Drink</th>
+          <th>Review Date</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-  
+      </thead>
+
+      <tbody>
+        <% @recipe_comment.reviews.each do |review|  %>
+          <tr>
+            <td><%=  review.comment  %></td>
+            <td><%=  review.likeStatus%></td>
+            <td><%=  review.reviewDate %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+    
 
 
 
 
-<div align="center">
-   <p> <%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
-   <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-   <p> <%= link_to 'Back' , recipes_path %>
-</div>  
+  <div align="left">
+    <p> <%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
+    <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <p> <%= link_to 'Back' , recipes_path %>
+  </div>  
 
 </main><!-- /.container -->

@@ -2,36 +2,45 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
   get 'home', to: 'pages#home', as: 'home'
+
+
+ #drink_comments
+  
+  #get 'drink_comments', to: 'drink_comment#index', as: 'drink_comments'
+  # get 'drink_comments/new', to: 'drink_comment#new', as: 'new_drink_comment'
+  # get 'drink_comments/:id', to: 'drink_comment#show', as: 'drink_comment'
+  
+
+ 
+  post 'drink_comments', to: 'drink_comment#create', as: 'drink_comments'
+  get 'drink_comments/:id/edit', to: 'drink_comment#edit', as: 'edit_drink_comment'
+  patch 'drink_comments/:id', to: 'drink_comment#update',  as: 'drink_comment'
+  put 'drink_comments/:id', to: 'drink_comment#update'
+  delete 'drink_comments/:id', to: 'drink_comment#destroy'
+  
+
+
  
   # Recipe routes
   get 'recipes', to: 'recipes#index', as: 'recipes'
-  get 'recipes/new', to: 'recipes#new', as: 'new_recipe'
   post 'recipes/create', to: 'recipes#create'
-  post 'drink_comments', to: 'drink_comment#create', as: 'drink_comments'
+  get 'recipes/new', to: 'recipes#new', as: 'new_recipe'
   get 'recipes/:recipe_id/drink_comments/new', to: 'drink_comment#new', as: 'new_drink_comments'
+
   get 'recipes/:id/edit', to: 'recipes#edit', as: 'edit_recipe'
   get 'recipes/:id', to: 'recipes#show', as: 'recipe'
   patch 'recipes/:id', to: 'recipes#update'
   put 'recipes/:id', to: 'recipes#update'
   delete 'recipes/:id', to: 'recipes#destroy'
   resource :recipes
+
+
+
+  
  
   # Ingredient routes
    get 'all_ingredients', to: 'ingredients#index', as: 'all_ingredients'
 
-  #drink_comments
-  
-  # get 'drink_comments', to: 'drink_comment#index', as: 'drink_comments'
-  # get 'drink_comments/new', to: 'drink_comment#new', as: 'new_drink_comment'
-  # get 'drink_comments/:id', to: 'drink_comment#show', as: 'drink_comment'
-  
-
- 
-  
-  get 'drink_comments/:id/edit', to: 'drink_comment#edit', as: 'edit_drink_comment'
-  patch 'drink_comments/:id', to: 'drink_comment#update',  as: 'drink_comment'
-  put 'drink_comments/:id', to: 'drink_comment#update'
-  delete 'drink_comments/:id', to: 'drink_comment#destroy'
 
   
   
