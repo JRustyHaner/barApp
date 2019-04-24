@@ -23,7 +23,9 @@
       <% end %>  
     </div> 
 
-
+  <div align="right">
+     <p> <%= link_to 'Add Review Commnet on Recipe' , edit_recipe_path(@recipe) %> </p>
+  </div>
 
   <div align="center">
     <table>
@@ -51,7 +53,7 @@
 
 
 
-  <div align="left">
+  <div align="center">
     <p> <%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
     <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     <p> <%= link_to 'Back' , recipes_path %>
