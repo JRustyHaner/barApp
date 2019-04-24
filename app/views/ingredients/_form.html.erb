@@ -1,0 +1,20 @@
+<%= form_with model: @ingredients, local: true do |form| %>
+    <div class="form-row" >
+        <div class="form-group row align-items-center">
+            <div class="col-auto">
+                <%= form.label :amount %>
+                <%= form.text_field :amount %>
+            </div>
+            <div class="col-auto"> 
+                <%= form.select(:measurement, options_for_select([['teaspoon', 1], ['tablespoon', 2],['ounce', 3], ['cup', 4],['pint', 5], ['jigger', 6],['dash', 7], ['garnish', 8]]), {}, {class: "form-control"}) %>   
+            </div>
+            <div class="col-auto"> 
+                <%= form.label :ingredientName %>
+                <%= form.text_field :ingredientName %>
+            </div>
+        </div>
+    </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
