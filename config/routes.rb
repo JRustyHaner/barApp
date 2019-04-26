@@ -57,4 +57,8 @@ Rails.application.routes.draw do
   get '/list/top', to: 'list#top', as: 'list_top_ten'
   get '/list/new', to: 'list#new', as: 'list_new'
 
+  # genPDFs routes
+  get 'gen_pd_fs/:id/show', to: 'gen_pd_fs#show', as: 'show_gen_pd_fs'
+  #resources :gen_pd_fs, only: [:show]
+
 end
