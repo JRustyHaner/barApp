@@ -16,9 +16,10 @@ Rails.application.routes.draw do
  
   # Ingredient routes
    get 'all_ingredients', to: 'ingredients#index', as: 'all_ingredients'
-   get 'ingredients/new', to: 'ingredients#new', as: 'new_ingredient'
-   post 'ingredients/create', to: 'ingredients#create'
+   get 'ingredients/new', to: 'ingredients#new', as: 'new_ingredients'
+   post 'ingredients/create', to: 'ingredient#create'
    get 'ingredients/:id', to: 'ingredients#show', as: 'ingredient'
+   resource :ingredients
 
   #drink_comments
   

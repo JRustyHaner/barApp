@@ -1,4 +1,7 @@
 class IngredientsController < ApplicationController
+    def ingredient_params
+        params.require(:ingredient).permit(:amount,:ingredientName,:measurement)
+    end
     def index
         @ingredients = Ingredient.all
         #renders ingredients.html.erb
@@ -12,12 +15,12 @@ class IngredientsController < ApplicationController
         #renders 'ingredients/new.html.erb'
     end
     def create
-        @ingredient = Ingredient.new(ingredient_params)
+        @ingredient = Ingredient.new(params.require(:ingredient).permit(:amount,:ingredientName,:measurement))
         if @ingredient.save
             
             redirect_to ingredient_url(@ingredient), notice: "ingredient record was successfully created."
         else
-            flash.now[:alert] = 'Error! Unable to create ingredient record.'
+            flash.now[:alert] = "Error! Unable to create ingredient record."
             render :new
         end
     end

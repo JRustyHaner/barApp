@@ -1,16 +1,38 @@
-<%= form_with model: @ingredients, local: true do |form| %>
+<%= form_with model: @ingredient, local: true do |form| %>
     <div class="form-row" >
         <div class="form-group row align-items-center">
             <div class="col-auto">
                 <%= form.label :amount %>
                 <%= form.text_field :amount %>
+                <% if @ingredient.errors.full_messages_for(:amount).any? %>
+                    <div class="invalid-feedback">
+                        <% @ingredient.errors.full_messages_for(:amount).each do |error_message| %>
+                            <%= error_message %>.
+                        <% end %>
+                    </div>
+                <% end %>
             </div>
             <div class="col-auto"> 
-                <%= form.select(:measurement, options_for_select([['teaspoon', 1], ['tablespoon', 2],['ounce', 3], ['cup', 4],['pint', 5], ['jigger', 6],['dash', 7], ['garnish', 8]]), {}, {class: "form-control"}) %>   
+                <%= form.label :measurement %>
+                <%= form.select(:measurement, options_for_select([['teaspoon','teaspoon'], ['tablespoon','tablespoon'],['ounce','ounce'], ['cup','cup'],['pint','pint'], ['jigger','jigger'],['dash','dash'], ['garnish', 'garnish']]), {}, {class: "form-control"}) %>   
+                <% if @ingredient.errors.full_messages_for(:measurement).any? %>
+                    <div class="invalid-feedback">
+                        <% @ingredient.errors.full_messages_for(:measurement).each do |error_message| %>
+                            <%= error_message %>.
+                        <% end %>
+                    </div>
+                <% end %>
             </div>
             <div class="col-auto"> 
                 <%= form.label :ingredientName %>
                 <%= form.text_field :ingredientName %>
+                <% if @ingredient.errors.full_messages_for(:ingredientName).any? %>
+                    <div class="invalid-feedback">
+                        <% @ingredient.errors.full_messages_for(:ingredientName).each do |error_message| %>
+                            <%= error_message %>.
+                        <% end %>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
