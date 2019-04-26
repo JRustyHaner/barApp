@@ -6,16 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#UserProfiles seeds data
+User_1 = UserProfile.create!(name: 'Admin', email: 'admin@gmail.com', mobile: '7347573691', password: 'Admin@15', address: '158 Windover Road', city: 'Memphis', state: 'Tennessee', zipcode: '38111', country: 'USA', isBusiness: 'false', role: 'admin')
+User_2 = UserProfile.create!(name: 'Sam', email: 'sam81@gmail.com', mobile: '7589452265', password: 'Smurfs@1581', address: '158 Windover Road', city: 'Memphis', state: 'Tennessee', zipcode: '38111', country: 'USA', isBusiness: 'true', role: 'user')
+User_3 = UserProfile.create!(name: 'Dean', email: 'dean097@yahoo.com', mobile: '9013271471', password: 'Pompeii@97', address: '3547 Walker Ave', city: 'Memphis', state: 'Tennessee', zipcode: '38111', country: 'USA', isBusiness: 'true', role: 'user')
+
 # Seed data for recipes
 #  description   :string
 #  drinkDate     :datetime
 #  drinkLocation :string
 #  drinkName     :string
 #  specialDate   :string
-Recipe_1 = Recipe.new(drinkDate: "02/11/2019", drinkLocation: 'USA', drinkName: 'Whiskey Sour', specialDate: '4th of July', description: 'Spirit, sugar, citrus. The original big three come together in the Whiskey Sour, whose history stretches back to the Lincoln administration. Few drinks in the cocktail canon are as quick to satisfy and endlessly mutable as the Whiskey Sour.' )
-Recipe_2 = Recipe.new(drinkDate: "02/11/2019", drinkLocation: 'USA', drinkName: 'Long Island Ice Tea', specialDate: 'Dinner', description: 'On paper, the Long Island Iced Tea is one hot mess of a drink. Four different and disparate spirits slugging it out in a single glass, along with triple sec, lemon juice and cola? The recipe reads more like a frat house hazing than one of the world’s most popular cocktails. And yet, somehow, it works.')
-Recipe_3 = Recipe.new(drinkDate: "02/11/2019", drinkLocation: 'USA', drinkName: 'Rum and Coke', specialDate: 'None', description: 'This is a description for a test drink.')
-Recipe_4 = Recipe.new(drinkDate: "02/11/2019", drinkLocation: 'BAN', drinkName: 'Salted Lassi', specialDate: 'None', description: 'Lassi is very popular drinks in Bangladesh. There are many types of lassi, sweet lassi, salted lassi, banana lassi, rose lassi, spicy lassi etc. It is a one kind of street food drinks in Bangladesh')
+Recipe_1 = Recipe.new(drinkDate: "02/11/2019", drinkLocation: 'USA', drinkName: 'Whiskey Sour', specialDate: '4th of July', description: 'Spirit, sugar, citrus. The original big three come together in the Whiskey Sour, whose history stretches back to the Lincoln administration. Few drinks in the cocktail canon are as quick to satisfy and endlessly mutable as the Whiskey Sour.', drinkType: 'Whiskey')
+Recipe_2 = Recipe.new(drinkDate: "02/11/2019", drinkLocation: 'USA', drinkName: 'Long Island Ice Tea', specialDate: 'Dinner', description: 'On paper, the Long Island Iced Tea is one hot mess of a drink. Four different and disparate spirits slugging it out in a single glass, along with triple sec, lemon juice and cola? The recipe reads more like a frat house hazing than one of the world’s most popular cocktails. And yet, somehow, it works.', drinkType: 'Ice Tea')
+Recipe_3 = Recipe.new(drinkDate: "02/11/2019", drinkLocation: 'USA', drinkName: 'Rum and Coke', specialDate: 'None', description: 'This is a description for a test drink.', drinkType: 'Coke')
+Recipe_4 = Recipe.new(drinkDate: "02/11/2019", drinkLocation: 'BAN', drinkName: 'Salted Lassi', specialDate: 'None', description: 'Lassi is very popular drinks in Bangladesh. There are many types of lassi, sweet lassi, salted lassi, banana lassi, rose lassi, spicy lassi etc. It is a one kind of street food drinks in Bangladesh', drinkType: 'Lassi')
 Ingredient_1 = Ingredient.create!(amount:4, measurement: 'cup', ingredientName: 'Ginger Beer')
 Ingredient_2 = Ingredient.create!(amount:0.67, measurement: 'cup', ingredientName: 'Lime Juice')
 Ingredient_3 = Ingredient.create!(amount:1.25, measurement: 'cup', ingredientName: 'Vodka')
