@@ -1,23 +1,38 @@
 <main role="main" class="container">
-
+  <% title @recipe.drinkName%>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+  
   <p><h2><%= @recipe.drinkName%></h2></p>
   <p><b><%= @recipe.description %></b></p>
+      <% fbhref = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.barapp.com%3A3000"+ recipe_path(@recipe)  %>
+      <div class="fb-share-button" 
+          data-href="http://www.barapp.com:3000" 
+          data-layout="button" data-size="large">
+          <a target="_blank" 
+            href= <%= fbhref %>%
+            class="fb-xfbml-parse-ignore">Share Recipe</a>
+      </div>
   <div align="center">
-    <%= image_tag (@recipe.image.url(:medium) ) if @recipe.image.exists? %>
-    <p>
-      <b>Type of Drink:</b><%= @recipe.drinkType%>
-    </p>
-    <p>  
-      <b>Special Occasion:</b> <%= @recipe.specialDate%>
-    </p>
-    <p>
-      <b>Country:</b> <%= @recipe.drinkLocation%>
-    </p>
-    <p>  
-      <b>Date Posted:</b> <%= @recipe.drinkDate%>
-    </p>
-  </div>   
-  
+
+    <%= image_tag (@recipe.image.url(:thumb)) if @recipe.image.exists?%>
+    
+    <div class="d-flex justify-content-around">    
+      <div class="col-auto">
+        <b>Type of Drink: </b><%= @recipe.drinkType%>
+      </div>
+      <div class="col-auto">
+        <b>Special Occasion: </b> <%= @recipe.specialDate%>
+      </div>  
+      <div class="col-auto">
+        <b>Country: </b> <%= @recipe.drinkLocation%>
+      </div>
+      <div class="col-auto">  
+        <b>Date Posted: </b> <%= @recipe.drinkDate%>
+      </div>
+    </div>
+    <br/>
+    <p><strong><u>Ingredients</u></strong></p>   
     <% @recipe.ingredients.each do |ingredient| %>
 
     <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
@@ -25,7 +40,7 @@
   </div> 
 
 <div align="right">
-   <p> <%= link_to 'Add Commnet' , new_drink_comment_path(@drink_comments) %> </p>
+   <p> <%= link_to 'Add Comment' , new_drink_comment_path(@drink_comments) %> </p>
 </div>
 
 <div align="center">
