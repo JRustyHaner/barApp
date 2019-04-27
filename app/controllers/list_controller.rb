@@ -14,7 +14,9 @@ class ListController < ApplicationController
     def occasion    
         @drinks = Recipe.where(specialDate: params[:occasion])
     end
-   
+    def top
+        @drinks = Recipe.order(created_at: :asc).limit(10)
+    end   
     def new
         @drinks = Recipe.order(created_at: :asc).reverse_order.limit(10)
 

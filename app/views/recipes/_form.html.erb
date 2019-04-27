@@ -63,20 +63,17 @@
           </div>
         <% end %>
       </div>
-      
+      <div class = "col-md-2">
+        <%= form.label "Date" %>
+        <%= form.date_field :drinkDate, class:"form-control form-control-sm" %>
+      </div>
+      <div class = "col-md-3">
+          <br><br>
+          <%= form.file_field :image %>
+      </div>
     </div>
   </div>
-
-  <div class = "col-md-2">
-      <%= form.label "Date" %>
-      <%= form.date_field :drinkDate, class:"form-control form-control-sm" %>
-  </div>
-  <div class = "col-md-3">
-      <br><br>
-      <%= form.file_field :image %>
-    </div>
-    <br> <br>
-    <p><%= form.submit "Save", class: "btn btn-primary" %></p>
+  <p><%= form.submit "Save", class: "btn btn-primary" %></p>
 </div>    
   
 <% end %>
