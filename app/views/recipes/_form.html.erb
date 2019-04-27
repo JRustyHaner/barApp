@@ -5,19 +5,47 @@
     <div class="form-group row align-items-center">
       <div class="col-auto">
         <%= form.label "Drink Name", class: "col-sm col-form-label col-form-label-sm"  %>
-        <%= form.text_field :drinkName , class: "form-control form-control-md" %>  
+        <%= form.text_field :drinkName , class: "form-control form-control-md" %> 
+        <% if @recipe.errors.full_messages_for(:drinkName).any? %>
+          <div class="invalid-feedback">
+              <% @recipe.errors.full_messages_for(:drinkName).each do |error_message| %>
+                  <%= error_message %>.
+              <% end %>
+          </div>
+        <% end %> 
       </div>
       <div class="col-auto"> 
         <%= form.label "Type of Drink" , class: "col-sm col-form-label col-form-label-sm"  %>
         <%= form.text_field :drinkType , class:"form-control form-control-md" %>
+        <% if @recipe.errors.full_messages_for(:drinkType).any? %>
+          <div class="invalid-feedback">
+              <% @recipe.errors.full_messages_for(:drinkType).each do |error_message| %>
+                  <%= error_message %>.
+              <% end %>
+          </div>
+        <% end %>
       </div>
       <div class="col-auto">
         <%= form.label "Special Occasion", class: "col-sm col-form-label col-form-label-sm"  %>
         <%= form.text_field :specialDate , class:"form-control form-control-md" %>
+        <% if @recipe.errors.full_messages_for(:specialDate).any? %>
+          <div class="invalid-feedback">
+              <% @recipe.errors.full_messages_for(:specialDate).each do |error_message| %>
+                  <%= error_message %>.
+              <% end %>
+          </div>
+        <% end %>
       </div>
       <div class="col-auto">
         <%= form.label "Country", class: "col-sm col-form-label col-form-label-sm"  %>
         <%= form.text_field :drinkLocation , class:"form-control form-control-md" %>
+        <% if @recipe.errors.full_messages_for(:drinkLocation).any? %>
+          <div class="invalid-feedback">
+              <% @recipe.errors.full_messages_for(:drinkLocation).each do |error_message| %>
+                  <%= error_message %>.
+              <% end %>
+          </div>
+        <% end %>
       </div>  
     </div>  
   </div>  
@@ -27,6 +55,13 @@
       <div class="col col-md-8">
         <%= form.label "Description", class: "col-sm col-form-label col-form-label-sm"  %>
         <%= form.text_area :description , class:"form-control form-control-sm" %>
+        <% if @recipe.errors.full_messages_for(:description).any? %>
+          <div class="invalid-feedback">
+              <% @recipe.errors.full_messages_for(:description).each do |error_message| %>
+                  <%= error_message %>.
+              <% end %>
+          </div>
+        <% end %>
       </div>
       
     </div>

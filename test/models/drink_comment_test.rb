@@ -52,5 +52,5 @@ class DrinkCommentTest < ActiveSupport::TestCase
   end
  
 
-
+  
 end
