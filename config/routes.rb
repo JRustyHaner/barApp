@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   get 'user_profiles/:id/edit', to: 'user_profile#edit', as: 'edit_profile'
   patch 'user_profiles/:id/edit', to: 'user_profile#update'
   put 'user_profiles/:id/edit', to: 'user_profile#update'
-  
+  delete 'user_profiles/:id/show', to: 'user_profile#destroy'
   
 
   # list routes
