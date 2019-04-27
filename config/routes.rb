@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   
 
 
+
  
   # Recipe routes
   get 'recipes', to: 'recipes#index', as: 'recipes'

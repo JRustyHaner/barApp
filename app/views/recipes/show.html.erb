@@ -41,10 +41,8 @@
           <th>Review Comment</th>
           <th>Like Drink</th>
           <th>Review Date</th>
-          
           <th>Action</th>
-          <th>Rating</th>
-         
+                 
         </tr>
       </thead>
 
@@ -59,11 +57,6 @@
              <%= link_to 'Edit', edit_drink_comment_path(review) %> 
              <%= link_to 'Destroy', drink_comment_path(review), method: :delete %>
             </td>
-
-            <td><% review.comment do  %>
-            <span class="glyphicon glyphicon-star"></span>
-            <% end %></td>
-
 
           </tr>
         <% end %>
