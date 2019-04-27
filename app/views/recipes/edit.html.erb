@@ -4,43 +4,7 @@
     <%= render 'form', recipe: @recipe %>
 
    
-   <!-- 
-    <div align="center">
-        
-        <p>
-            <%= link_to 'Add New Drink Comment Here', new_drink_comments_path(@recipe) %>
-        </p>
-
-    </div>
-
-    <table class="table table-sm">
-        <thead>
-            <tr>
-                
-                <th scope="col">likeStatus</th>
-                <th scope="col">comment</th>
-                <th scope="col">reviewDate</th>  
-                <th scope="col">Action</th>          
-            </tr>
-        </thead>
-        <tbody>
-            <% @recipe.reviews.each do |dr_comment| %>
-                <tr>
-                    
-                    <td> <%= dr_comment.likeStatus %></td>
-                    <td> <%= dr_comment.comment %></td>
-                    <td> <%= dr_comment.reviewDate %></td>
-                    <td> 
-                     <%= link_to 'Edit', edit_drink_comment_path(dr_comment) %> 
-                     <%= link_to 'Destroy', drink_comment_path(dr_comment), method: :delete %>
-                    </td> 
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
-  -->
-
-
+   
     <%= link_to 'Back', recipe_path %>
     <%= link_to 'Home', home_path %>
 
