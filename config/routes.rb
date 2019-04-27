@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'recipes', to: 'recipes#index', as: 'recipes'
   get 'recipes/new', to: 'recipes#new', as: 'new_recipe'
   post 'recipes/create', to: 'recipes#create'
+  get 'recipes/:recipe_id/ingredients/new', to: 'ingredients#new', as: 'new_ingredient'
+  post 'ingredients/create', to: 'ingredients#create', as: 'ingredients'
   get 'recipes/:id/edit', to: 'recipes#edit', as: 'edit_recipe'
   get 'recipes/:id', to: 'recipes#show', as: 'recipe'
   patch 'recipes/:id', to: 'recipes#update'
@@ -15,7 +17,11 @@ Rails.application.routes.draw do
   resource :recipes
  
   # Ingredient routes
-   get 'all_ingredients', to: 'ingredients#index', as: 'all_ingredients'
+  # get 'all_ingredients', to: 'ingredients#index', as: 'all_ingredients'
+  # get 'ingredients/new', to: 'ingredients#new', as: 'new_ingredient'
+  # post 'ingredients/create', to: 'ingredients#create'
+  # get 'ingredients/:id', to: 'ingredients#show', as: 'ingredient'
+  #resource :ingredients
 
   #drink_comments
   

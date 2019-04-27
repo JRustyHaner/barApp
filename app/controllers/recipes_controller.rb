@@ -26,7 +26,12 @@ class RecipesController < ApplicationController
         end
     end
     def edit
-        @recipe = Recipe.find(params[:id])
+        begin
+            @recipe = Recipe.find(params[:id])    
+        rescue => exception
+            redirect_to recipes_url, alert: "Error: Recipe not found."
+        end
+        
         #renders 'recipe/edit.html.erb'
     end
     def update

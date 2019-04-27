@@ -1,0 +1,10 @@
+<main role="main" class="container">
+<% title "Add an ingredient."%>
+<h1>New Ingredient</h1>
+
+<%= render 'form', recipe_id: @recipe.id, ingredient: @ingredient %>
+
+<p><%= link_to 'Back', recipe_path(@recipe) %>
+<p><%= link_to 'Home', home_path %></p>
+
+</main><!-- /.container -->

@@ -4,7 +4,13 @@
 
 <%= render 'form', recipe: @recipe %>
 
-<%= link_to 'Back', recipe_path %>
-<%= link_to 'Home', home_path %>
+<p><strong><u>Ingredients</u></strong></p>   
+    <% @recipe.ingredients.each do |ingredient| %>
+        <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
+    <% end %> 
+
+<p><%= link_to 'Add ingredient', new_ingredient_path(@recipe) %></p>
+<p><%= link_to 'Back', recipe_path %></p>
+<p><%= link_to 'Home', home_path %></p>
 
 </main><!-- /.container -->
