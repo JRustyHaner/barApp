@@ -34,9 +34,9 @@ class DrinkCommentTest < ActiveSupport::TestCase
     assert one.valid?
   end
 
-  test "reviewDate is should be wrong format" do
+  test "reviewDate should be present" do
     one = drink_comments(:one)
-    one.reviewDate= '9-1004-03 10005:20001:3001'
+    one.reviewDate= nil
     assert_not one.valid?
   end
 
