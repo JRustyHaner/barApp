@@ -23,7 +23,7 @@
     <p><b>Role:</b> <%= @user_profile.role %></p>
 
     <p>
-        <%= link_to 'Back', profile_path(@user_profile) %>|
-        <%= link_to 'Edit', edit_profile_path(@user_profile) %>|
+        <%= link_to 'Back', profile_path(@user_profile) %> |
+        <%= link_to 'Edit', edit_profile_path(@user_profile) %> |
         <%= link_to 'Destroy', show_profile_path(@user_profile), method: :delete %>        
     </p>
