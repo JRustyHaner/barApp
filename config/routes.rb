@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   # get 'all_ingredients', to: 'ingredients#index', as: 'all_ingredients'
   # get 'ingredients/new', to: 'ingredients#new', as: 'new_ingredient'
   # post 'ingredients/create', to: 'ingredients#create'
+  get 'ingredients/:id/edit', to: 'ingredients#edit', as: 'edit_ingredient'
+  patch 'ingredients/:id', to: 'ingredients#update', as: 'ingredient'
+  put 'ingredients/:id', to: 'ingredients#update'
   # get 'ingredients/:id', to: 'ingredients#show', as: 'ingredient'
   #resource :ingredients
 

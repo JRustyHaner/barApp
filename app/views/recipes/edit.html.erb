@@ -6,7 +6,7 @@
 
 <p><strong><u>Ingredients</u></strong></p>   
     <% @recipe.ingredients.each do |ingredient| %>
-        <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
+        <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %> <%= link_to 'edit', edit_ingredient_path(@recipe.ingredients) %></p>
     <% end %> 
 
 <p><%= link_to 'Add ingredient', new_ingredient_path(@recipe) %></p>

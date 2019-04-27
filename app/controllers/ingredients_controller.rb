@@ -33,6 +33,15 @@ class IngredientsController < ApplicationController
             render :new
         end
     end
+    def edit
+        begin
+            @ingredient = Ingredient.find(params[:id])    
+        rescue => exception
+            redirect_to ingredients_url, alert: "Error: Ingredient not found."
+        end        
+        #renders 'ingredients/edit.html.erb'
+    end
+    def update
 
-    
+    end    
 end
