@@ -19,6 +19,11 @@ class ListController < ApplicationController
         @drinks = Recipe.order(created_at: :asc).reverse_order.limit(10)
 
     end
+
+    def bar
+        @user_profiles = UserProfile.all()
+    end
+
     def search
         if params[:by] == "occasion"
             redirect_to list_by_occasion_path(:occasion => params[:search])

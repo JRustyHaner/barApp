@@ -11,6 +11,7 @@ User_1 = UserProfile.create!(name: 'Admin', email: 'admin@gmail.com', mobile: '7
 User_2 = UserProfile.create!(name: 'Sam', email: 'sam81@gmail.com', mobile: '7589452265', password: 'Smurfs@1581', address: '158 Windover Road', city: 'Memphis', state: 'Tennessee', zipcode: '38111', country: 'USA', isBusiness: 'true', role: 'user')
 User_3 = UserProfile.create!(name: 'Dean', email: 'dean097@yahoo.com', mobile: '9013271471', password: 'Pompeii@97', address: '3547 Walker Ave', city: 'Memphis', state: 'Tennessee', zipcode: '38111', country: 'USA', isBusiness: 'true', role: 'user')
 
+
 # Seed data for recipes
 #  description   :string
 #  drinkDate     :datetime
@@ -67,3 +68,10 @@ Recipe_1.save!
 Recipe_2.save!
 Recipe_3.save!
 Recipe_4.save!
+
+User_2.drinks.append Recipe_1
+User_3.drinks.append Recipe_2
+User_3.drinks.append Recipe_3
+
+User_2.save!
+User_3.save!
