@@ -6,7 +6,13 @@
 
 <p><strong><u>Ingredients</u></strong></p>   
     <% @recipe.ingredients.each do |ingredient| %>
-        <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %> <%= link_to 'edit', edit_ingredient_path(@recipe.ingredients) %></p>
+        <p>
+            <%= ingredient.amount %> 
+            <%= ingredient.measurement%> 
+            <%= ingredient.ingredientName %> 
+            <%= link_to 'Edit', edit_ingredient_path(ingredient) %>
+            <%= link_to 'Delete', ingredient_path(ingredient), method: :delete, data: { confirm: 'Are you sure you want to delete '+ingredient.ingredientName+'?' } %>
+        </p>
     <% end %> 
 
 <p><%= link_to 'Add ingredient', new_ingredient_path(@recipe) %></p>
