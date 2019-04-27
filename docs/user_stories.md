@@ -66,8 +66,8 @@
   - Priority: 90
   - Status: Not started
  
-- US 11 Search Bar
-  - Description: As an account-holder, I should be able to search for nearby bars, so that I can plan my visit.
+- US 11 List Bars
+  - Description: As an account-holder, I should be able to list the Bars that are associated with business users of BarApp Account, so that I can plan my visit to a Bar.
   - Estimate: 1.5
   - Priority: 80
   - Status: Not started
