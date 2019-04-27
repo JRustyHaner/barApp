@@ -31,9 +31,9 @@ class DrinkCommentController < ApplicationController
         @recipe.reviews << @drink_comments
         
         if @recipe.save
-            redirect_to recipe_url(@recipe), notice: "Drink comment was successfully created."
+            redirect_to recipe_url(@recipe), notice: "Review on drink is successfully submitted."
         else
-            flash.now[:alert] = 'Error! Unable to create Drink Comment.'
+            flash.now[:alert] = 'Error! Unable to create review on Drink'
             render :new
         end
     end
@@ -51,9 +51,9 @@ class DrinkCommentController < ApplicationController
         end
 
         if @drink_comments.update(params.require(:drink_comment).permit( :likeStatus, :comment, :reviewDate ))
-            redirect_to recipe_url(@drink_comments.recipes), notice: "Drink Comment was successfully updated."
+            redirect_to recipe_url(@drink_comments.recipes), notice: "Review on Drink was successfully updated."
         else
-            flash.now[:alert] = 'Error! Unable to update Drink Comment.'
+            flash.now[:alert] = 'Error! Unable to update review on Drink'
             render :edit
         end
     end
@@ -67,6 +67,6 @@ class DrinkCommentController < ApplicationController
         end
         @recipesss = @drink_comments.recipes
         @drink_comments.destroy
-        redirect_to recipe_url(@recipesss), notice: 'Drink comment was successfully removed.'
+        redirect_to recipe_url(@recipesss), notice: 'Review on Drink was successfully removed.'
     end 
 end

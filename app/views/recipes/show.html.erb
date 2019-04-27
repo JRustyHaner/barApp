@@ -22,10 +22,17 @@
       <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
       <% end %>  
     </div> 
-
+  <!--
   <div align="right">
-     <p> <%= link_to 'Add Review Commnet on Recipe' , edit_recipe_path(@recipe) %> </p>
+     <p> <%= link_to 'Add Review on Drink' , edit_recipe_path(@recipe) %> </p> 
   </div>
+
+   -->
+
+  <div align="center">
+     <p> <%=  link_to  'Add Review on Drink ' , new_drink_comments_path(@recipe) %> </p> 
+  </div>
+
 
   <div align="center">
     <table>
@@ -34,6 +41,10 @@
           <th>Review Comment</th>
           <th>Like Drink</th>
           <th>Review Date</th>
+          
+          <th>Action</th>
+          <th>Rating</th>
+         
         </tr>
       </thead>
 
@@ -43,6 +54,17 @@
             <td><%=  review.comment  %></td>
             <td><%=  review.likeStatus%></td>
             <td><%=  review.reviewDate %></td>
+                        
+            <td> 
+             <%= link_to 'Edit', edit_drink_comment_path(review) %> 
+             <%= link_to 'Destroy', drink_comment_path(review), method: :delete %>
+            </td>
+
+            <td><% review.comment do  %>
+            <span class="glyphicon glyphicon-star"></span>
+            <% end %></td>
+
+
           </tr>
         <% end %>
       </tbody>

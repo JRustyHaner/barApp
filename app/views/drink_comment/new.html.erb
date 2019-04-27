@@ -2,7 +2,7 @@
 
     <main role="main" class="container">
 
-        <h1>New Drink Comment </h1>
+        <h1>Write a Review on <b> '<%=  @recipe.drinkName   %>' </h1>
 
         <%= render 'form', recipe_id: @recipe.id,  drink_comment: @drink_comments %>
 
