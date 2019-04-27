@@ -68,4 +68,12 @@ class UserProfileController < ApplicationController
         end                    
     end
 
+    def destroy
+        @user_profile = UserProfile.find(params[:id])
+        name = @user_profile.name
+        @user_profile.destroy
+        $logged_in = 'false'
+        redirect_to home_url, notice: "#{name}'s account was successfully deleted."
+    end
+
 end
