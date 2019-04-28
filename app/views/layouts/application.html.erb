@@ -19,9 +19,7 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item <%= active_class(home_path) %>">
-            <%= link_to 'Home', home_path, class:'nav-link' %>
-          </li>    
+    
 
           <% if $logged_in == 'true' %>        
             <div class="dropdown">
