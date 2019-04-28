@@ -1,39 +1,58 @@
 <main role="main" class="container">
-    <h1>BarApp - Index List</h1>
+    <h1>Master Recipe List</h1>
+    
      <%= form_tag('/list') do %>
-            <%= label_tag(:search, "Search Recipes for:") %>
+            <div class="row">
+            <div class="col-md-4 col-thead">
+            Search:
+            </div>
+            <div class="col-md-8 col-thead">
+            By:
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-4">
             <%= text_field_tag(:search) %>
-            by<%= radio_button_tag('by', 'occasion') %>Occasion
+            </div>
+            <div class="col-md-7 form-check form-check-inline">
+            <%= radio_button_tag('by', 'occasion') %>Occasion
             <%= radio_button_tag('by', 'country') %>Country
             <%= radio_button_tag('by', 'ingredient') %>Ingredient
-            <%= submit_tag("Search") %>
+            <%= submit_tag("Search",class: "btn btn-primary") %>
+            </div>
+            </div>
+            </div>
         <% end %>
+    </div>
 
-        <% link_to "List By Top 10", list_top_ten_path %>
-        <% link_to "List by Newest", list_new_path %>
    <table class="table table-sm">
     <thead>
-            <tr>
-                <th>Drink Name</th>
-                <th>Description</th>
-                <th>Type</th>
-                <th>Special Occasion</th>
-                <th>Country</th>
-                <th>Date Posted</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @drinks.each do |drinks| %>
-            <tr>
-                <td><%= link_to drinks.drinkName, recipe_path(drinks) %></td>
-                <td><%= drinks.description%></td>
-                <td><%= drinks.drinkType %></td>
-                <td><%= drinks.specialDate %></td>
-                <td><%= drinks.drinkLocation %></td>
-                <td><%= drinks.drinkDate %></td>
-            </tr>
-            <% end %>
-        </tbody>
-    </table>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Drink Name</th>
+            <th scope="col">Drink Type</th>
+            <th scope="col">Origin</th>
+            <th scope="col">Date Added</th>
+            <th scope="col">Comment Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @drinks.each do |drinks|%>
+        <tr>
+            <th scope="row"><%= image_tag(drinks.image) if drinks.image.exists? %></th>
+            <th><%= link_to drinks.drinkName, recipe_path(:id => drinks.id) %></th>
+            <th><%= drinks.drinkType %></th>
+            <th><%= drinks.drinkLocation %></th>
+            <th><%= drinks.drinkDate %></th>
+            <th><%= drinks.reviews.count %></th>
+
+        </tr>
+        <% end %>
+    </tbody>
+    
+  
+
+   </table>
 
 </main>  
+
