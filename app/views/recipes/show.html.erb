@@ -13,6 +13,7 @@
             href= <%= fbhref %>%
             class="fb-xfbml-parse-ignore">Share Recipe</a>
       </div>
+
   <div align="center">
 
     <%= image_tag (@recipe.image.url(:thumb)) if @recipe.image.exists?%>
@@ -66,9 +67,11 @@
 <div align="center">
   <p><%= link_to 'Download Recipe as PDF', show_gen_pd_fs_path(@recipe, format: :pdf) %></p>
   <p><%= link_to 'Like this Drink', new_drink_comment_path %></p>
-  <p><%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
-  <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure you want to delete '+@recipe.drinkName+'?' } %></p>
-  <p><%= link_to 'Back' , recipes_path %>
+  <% if (@recipe.userprofile_id == session[:current_user_id].to_i ) %>
+    <p><%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
+    <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure you want to delete '+@recipe.drinkName+'?' } %></p>
+  <% end %>
+  <p><%= link_to 'Back' , list_index_path %>
 </div>  
 
 </main><!-- /.container -->
