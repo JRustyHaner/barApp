@@ -18,7 +18,7 @@ class ListController < ApplicationController
         @drinks = Recipe.order(created_at: :asc).limit(10)
     end   
     def new
-        @drinks = Recipe.order(created_at: :asc).reverse_order.limit(10)
+        @drinks = Recipe.left_joins(:reviews).group(:id).order('COUNT(reviews.id) DESC').limit(10)
 
     end
 
