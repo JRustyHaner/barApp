@@ -1,52 +1,59 @@
 <main role="main" class="container">
+  <% title @recipe.drinkName%>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+  
+  <p><h2><%= @recipe.drinkName%></h2></p>
+  <p><b><%= @recipe.description %></b></p>
+      <% fbhref = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.barapp.com%3A3000"+ recipe_path(@recipe)  %>
+      <div class="fb-share-button" 
+          data-href="http://www.barapp.com:3000" 
+          data-layout="button" data-size="large">
+          <a target="_blank" 
+            href= <%= fbhref %>%
+            class="fb-xfbml-parse-ignore">Share Recipe</a>
+      </div>
+  <div align="center">
 
-    <p><h2><%= @recipe.drinkName%></h2></p>
-    <p><b><%= @recipe.description %></b></p>
-    <div align="center">
-      <p>
-        <b>Type of Drink:</b><%= @recipe.drinkType%>
-      </p>
-      <p>  
-        <b>Special Occasion:</b> <%= @recipe.specialDate%>
-      </p>
-      <p>
-        <b>Country:</b> <%= @recipe.drinkLocation%>
-      </p>
-      <p>  
-        <b>Date Posted:</b> <%= @recipe.drinkDate%>
-      </p>
-    </div>   
+    <%= image_tag (@recipe.image.url(:thumb)) if @recipe.image.exists?%>
     
-      <% @recipe.ingredients.each do |ingredient| %>
-
+    <div class="d-flex justify-content-around">    
+      <div class="col-auto">
+        <b>Type of Drink: </b><%= @recipe.drinkType%>
+      </div>
+      <div class="col-auto">
+        <b>Special Occasion: </b> <%= @recipe.specialDate%>
+      </div>  
+      <div class="col-auto">
+        <b>Country: </b> <%= @recipe.drinkLocation%>
+      </div>
+      <div class="col-auto">  
+        <b>Date Posted: </b> <%= @recipe.drinkDate%>
+      </div>
+    </div>
+    <p><strong><u>Ingredients</u></strong></p>   
+    <% @recipe.ingredients.each do |ingredient| %>
       <p><%= ingredient.amount %> <%= ingredient.measurement%> <%= ingredient.ingredientName %></p>
-      <% end %>  
-    </div> 
-  <!--
-  <div align="right">
-     <p> <%= link_to 'Add Review on Drink' , edit_recipe_path(@recipe) %> </p> 
-  </div>
+    <% end %>  
+  </div> 
 
-   -->
-
-  <div align="center">
+<div align="center">
      <p> <%=  link_to  'Add Review on Drink ' , new_drink_comments_path(@recipe) %> </p> 
-  </div>
+</div>
 
-
-  <div align="center">
-    <table>
-      <thead>
-        <tr>
+<div align="center">
+  <table>
+    <thead>
+      <tr>
           <th>Review Comment</th>
           <th>Like Drink</th>
           <th>Review Date</th>
           <th>Action</th>
                  
-        </tr>
-      </thead>
+      </tr>
+    </thead>
 
-      <tbody>
+    <tbody>
         <% @recipe_comment.reviews.each do |review|  %>
           <tr>
             <td><%=  review.comment  %></td>

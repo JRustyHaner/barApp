@@ -49,4 +49,31 @@ class UserProfileController < ApplicationController
         end 
     end
 
+    def edit
+        @user_profiles = UserProfile.find(params[:id])
+        # render 'user_profile/edit.html.erb'
+    end
+
+    def update
+        begin
+            @user_profile = UserProfile.find(params[:id])
+            if @user_profile.update(params.require(:user_profile).permit(:mobile, :address, :city, :state, :zipcode, :country, :isBusiness))
+                redirect_to show_profile_url(@user_profile), notice: 'Profile was successfully updated.'
+            else  
+                flash.now[:alert] = 'Error! Unable to update Profile.'
+                render :edit 
+            end
+        rescue            
+            redirect_to home_url, alert: "Error: Profile not found."   
+        end                    
+    end
+
+    def destroy
+        @user_profile = UserProfile.find(params[:id])
+        name = @user_profile.name
+        @user_profile.destroy
+        $logged_in = 'false'
+        redirect_to home_url, notice: "#{name}'s account was successfully deleted."
+    end
+
 end

@@ -1,5 +1,5 @@
 
-<%= form_with model: user_profile, local: true do |form| %>
+<%= form_with model: @user_profile do |form| %>
         <div class="field">
             <%= form.label :name %>
             <%= form.text_field :name, class: 'form-control' %>
@@ -38,7 +38,7 @@
 
         <div class="field">
             <%= form.label :password %>
-            <%= form.text_field :password, class: 'form-control' %>
+            <%= form.password_field :password, class: 'form-control' %>
             <% if user_profile.errors.full_messages_for(:password).any? %>
                 <div class="invalid-feedback">
                     <% user_profile.errors.full_messages_for(:password).each do |error_message| %>
@@ -120,18 +120,6 @@
             <% end %>
         </div>
             
-        <div class="field">
-            <%= 'Select one of the roles below' %><br>
-            <%= form.radio_button :role, 'user', :checked => true, class:"form-control" %><%= label :role_user, 'User' %>
-            <%= form.radio_button :role, 'admin', class:"form-control" %><%= label :role_admin, 'Admin' %>            
-            <% if user_profile.errors.full_messages_for(:role).any? %>
-                <div class="invalid-feedback">
-                    <% user_profile.errors.full_messages_for(:role).each do |error_message| %>
-                        <%= error_message %>.
-                    <% end %>   
-                </div>
-            <% end %>
-        </div>
         
         <div class="actions">
             <%= form.submit 'Submit', class: 'btn btn-primary' %>

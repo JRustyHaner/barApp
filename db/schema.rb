@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_09_015129) do
+ActiveRecord::Schema.define(version: 2019_04_14_203012) do
 
   create_table "drink_comments", force: :cascade do |t|
     t.string "likeStatus"
     t.string "comment"
-    t.datetime "reviewDate"
+    t.date "reviewDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "recipe_id"
@@ -39,12 +39,15 @@ ActiveRecord::Schema.define(version: 2019_04_09_015129) do
     t.string "description"
     t.string "specialDate"
     t.string "drinkLocation"
-    t.datetime "drinkDate"
-    t.string "fileName"
+    t.date "drinkDate"
     t.string "drinkType"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "userprofile_id"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["userprofile_id"], name: "index_recipes_on_userprofile_id"
   end
 
@@ -61,7 +64,7 @@ ActiveRecord::Schema.define(version: 2019_04_09_015129) do
     t.boolean "isBusiness"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "role"
+    t.string "role", default: "user"
   end
 
 end

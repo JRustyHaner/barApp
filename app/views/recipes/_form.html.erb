@@ -1,37 +1,80 @@
 <%= form_with model: @recipe, local: true do |form| %>
 
-  <div class="field">
-    <%= form.label "Drink Name" %>
-    <%= form.text_field :drinkName , class:'form-control' %>
-  </div>
+<div>
+  <div class="form-row" >
+    <div class="form-group row align-items-center">
+      <div class="col-auto">
+        <%= form.label "Drink Name", class: "col-sm col-form-label col-form-label-sm"  %>
+        <%= form.text_field :drinkName , class: "form-control form-control-md" %> 
+        <% if @recipe.errors.full_messages_for(:drinkName).any? %>
+          <div class="invalid-feedback">
+              <% @recipe.errors.full_messages_for(:drinkName).each do |error_message| %>
+                  <%= error_message %>.
+              <% end %>
+          </div>
+        <% end %> 
+      </div>
+      <div class="col-auto"> 
+        <%= form.label "Type of Drink" , class: "col-sm col-form-label col-form-label-sm"  %>
+        <%= form.text_field :drinkType , class:"form-control form-control-md" %>
+        <% if @recipe.errors.full_messages_for(:drinkType).any? %>
+          <div class="invalid-feedback">
+              <% @recipe.errors.full_messages_for(:drinkType).each do |error_message| %>
+                  <%= error_message %>.
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-auto">
+        <%= form.label "Special Occasion", class: "col-sm col-form-label col-form-label-sm"  %>
+        <%= form.text_field :specialDate , class:"form-control form-control-md" %>
+        <% if @recipe.errors.full_messages_for(:specialDate).any? %>
+          <div class="invalid-feedback">
+              <% @recipe.errors.full_messages_for(:specialDate).each do |error_message| %>
+                  <%= error_message %>.
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-auto">
+        <%= form.label "Country", class: "col-sm col-form-label col-form-label-sm"  %>
+        <%= form.text_field :drinkLocation , class:"form-control form-control-md" %>
+        <% if @recipe.errors.full_messages_for(:drinkLocation).any? %>
+          <div class="invalid-feedback">
+              <% @recipe.errors.full_messages_for(:drinkLocation).each do |error_message| %>
+                  <%= error_message %>.
+              <% end %>
+          </div>
+        <% end %>
+      </div>  
+    </div>  
+  </div>  
 
-  <div class="field">
-    <%= form.label "Type of Drink" %>
-    <%= form.text_field :drinkType , class:'form-control' %>
+  <div class="form-group">
+    <div class="form-group row">  
+      <div class="col col-md-8">
+        <%= form.label "Description", class: "col-sm col-form-label col-form-label-sm"  %>
+        <%= form.text_area :description , class:"form-control form-control-sm" %>
+        <% if @recipe.errors.full_messages_for(:description).any? %>
+          <div class="invalid-feedback">
+              <% @recipe.errors.full_messages_for(:description).each do |error_message| %>
+                  <%= error_message %>.
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class = "col-md-2">
+        <%= form.label "Date" %>
+        <%= form.date_field :drinkDate, class:"form-control form-control-sm" %>
+      </div>
+      <div class = "col-md-3">
+          <br><br>
+          <%= form.file_field :image %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label "Description" %>
-    <%= form.text_field :description , class:'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Special Occasion" %>
-    <%= form.text_field :specialDate , class:'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Country" %>
-    <%= form.text_field :drinkLocation , class:'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Date" %>
-    <%= form.text_field :drinkDate, class:'form-control' %>
-  </div>
-    
-  <div class="actions">
-    <%= form.submit "Save" %>
-  </div>
+  <p><%= form.submit "Save", class: "btn btn-primary" %></p>
+</div>    
+  
 <% end %>
 

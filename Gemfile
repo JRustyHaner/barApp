@@ -42,6 +42,13 @@ gem 'bootstrap', '~> 4.3.1'
 #Add jquery-rails
 gem 'jquery-rails'
 
+#Add paperclip and ImageMagick
+gem "paperclip", "~> 6.0.0"
+
+#Add Wicked PDF
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -70,6 +77,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development do
   gem 'annotate'
 end
-
-gem 'bootstrap', '~> 4.3.1'
-gem 'jquery-rails'

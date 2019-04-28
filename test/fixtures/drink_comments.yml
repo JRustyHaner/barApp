@@ -5,7 +5,7 @@
 #  id             :integer          not null, primary key
 #  comment        :string
 #  likeStatus     :string
-#  reviewDate     :datetime
+#  reviewDate     :date
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  recipe_id      :integer
@@ -22,9 +22,9 @@
 one:
   likeStatus: Yes
   comment: I like the drink vey much
-  reviewDate: 2019-04-04 15:21:31
+  reviewDate: 2019-04-04
 
 two:
   likeStatus: No
   comment: I dont like the drink
-  reviewDate: 2019-04-03 15:21:31
+  reviewDate: 2019-04-03
