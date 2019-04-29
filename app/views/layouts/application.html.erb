@@ -54,7 +54,10 @@
         </ul>
 
         <ul class= "navbar-nav navbar-right">
-        <% if logged_in? %>          
+        <% if logged_in? %>
+          <li class="nav-item <%= active_class(new_profile_path) %>">
+            <%= link_to 'Profile' , profile_path(current_user), class:'nav-link' %>
+          </li>          
           <li class="nav-item <%= active_class(logout_path) %>">
             <%= link_to 'LogOut' , logout_path, method: :delete, class:'nav-link' %>
           </li>
