@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
   get 'home', to: 'pages#home', as: 'home'
@@ -45,14 +44,15 @@ Rails.application.routes.draw do
 
 
   # user_profile routes
-  get 'user_profiles/:id/show', to: 'user_profile#show', as: 'show_profile'
-  get 'user_profiles/login', to: 'user_profile#login', as: 'login'
-  post 'user_profiles/login', to: 'user_profile#check_account'
-  get 'user_profiles/logout', to: 'user_profile#logout', as: 'logout'
+  get 'sessions/new'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   get 'user_profiles/:id', to: 'user_profile#index', as: 'profile'
   get 'user_profiles', to: 'user_profile#new', as: 'new_profile'
   post 'user_profiles', to: 'user_profile#create'
   get 'user_profiles/:id/edit', to: 'user_profile#edit', as: 'edit_profile'
+  get 'user_profiles/:id/show', to: 'user_profile#show', as: 'show_profile'
   patch 'user_profiles/:id/edit', to: 'user_profile#update'
   put 'user_profiles/:id/edit', to: 'user_profile#update'
   delete 'user_profiles/:id/show', to: 'user_profile#destroy'
