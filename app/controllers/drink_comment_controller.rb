@@ -30,17 +30,33 @@ class DrinkCommentController < ApplicationController
         @drink_comments = DrinkComment.new(params.require(:drink_comment).permit(:likeStatus, :comment, :reviewDate ))
         @recipe.reviews << @drink_comments
         
-        if @recipe.save
+        begin
+            @user_profile = UserProfile.includes(:comments).find(session[:current_user_id])    
+        rescue => exception
+            redirect_to home_url, notice: "User not found. Please log in."
+        end
+        @user_profile.comments << @drink_comments
+
+
+        if (@recipe.save && @user_profile.save)
             redirect_to recipe_url(@recipe), notice: "Review on drink is successfully submitted."
         else
             flash.now[:alert] = 'Error! Unable to create review on Drink'
             render :new
         end
+
+
     end
 
     def edit
+        
         @drink_comments = DrinkComment.find(params[:id])
+        @recipess = @drink_comments.recipes
         #renders 'drink_comment/edit.html.erb'
+        if (@drink_comments.userprofile_id != session[:current_user_id].to_i)
+            redirect_to recipe_url(@recipess), alert: "Not your comment."
+            #redirect_to list_index_url, alert: "Not your comment."
+        end
     end
 
     def update
@@ -63,7 +79,6 @@ class DrinkCommentController < ApplicationController
           @drink_comments = DrinkComment.find(params[:id])
         rescue
           redirect_to recipes_url, alert: 'Error: Drink comment not found'
-          
         end
         @recipesss = @drink_comments.recipes
         @drink_comments.destroy
