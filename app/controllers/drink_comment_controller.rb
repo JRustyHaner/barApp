@@ -55,7 +55,7 @@ class DrinkCommentController < ApplicationController
        
         if (@drink_comments.userprofile_id != session[:current_user_id].to_i)
             redirect_to recipe_url(@recipess), alert: "Not your comment."
-            #redirect_to list_index_url, alert: "Not your comment."
+            ##redirect_to list_index_url, alert: "Not your comment."
         end
     end
 
