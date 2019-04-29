@@ -10,7 +10,7 @@
             
             <%# = render 'form', recipe_id: @drink_comments.recipes.id, drink_comment: @drink_comments  %>
 
-            <%= link_to 'Back', edit_drink_comment_path %>
+            <%= link_to 'Back', recipe_path(@drink_comments.recipes.id)%>
 
 
         
