@@ -2,11 +2,32 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
   get 'home', to: 'pages#home', as: 'home'
+
+
+ #drink_comments
+  
+  #get 'drink_comments', to: 'drink_comment#index', as: 'drink_comments'
+  # get 'drink_comments/new', to: 'drink_comment#new', as: 'new_drink_comment'
+  # get 'drink_comments/:id', to: 'drink_comment#show', as: 'drink_comment'
+  
+
+ 
+  post 'drink_comments', to: 'drink_comment#create', as: 'drink_comments'
+  get 'drink_comments/:id/edit', to: 'drink_comment#edit', as: 'edit_drink_comment'
+  patch 'drink_comments/:id', to: 'drink_comment#update',  as: 'drink_comment'
+  put 'drink_comments/:id', to: 'drink_comment#update'
+  delete 'drink_comments/:id', to: 'drink_comment#destroy'
+  
+
+
+
  
   # Recipe routes
   get 'recipes', to: 'recipes#index', as: 'recipes'
-  get 'recipes/new', to: 'recipes#new', as: 'new_recipe'
   post 'recipes/create', to: 'recipes#create'
+  get 'recipes/new', to: 'recipes#new', as: 'new_recipe'
+  get 'recipes/:recipe_id/drink_comments/new', to: 'drink_comment#new', as: 'new_drink_comments'
+
   get 'recipes/:recipe_id/ingredients/new', to: 'ingredients#new', as: 'new_ingredient'
   post 'ingredients/create', to: 'ingredients#create', as: 'ingredients'
   get 'recipes/:id/edit', to: 'recipes#edit', as: 'edit_recipe'
@@ -15,6 +36,10 @@ Rails.application.routes.draw do
   put 'recipes/:id', to: 'recipes#update'
   delete 'recipes/:id', to: 'recipes#destroy'
   resource :recipes
+
+
+
+  
  
   # Ingredient routes
   # get 'all_ingredients', to: 'ingredients#index', as: 'all_ingredients'
@@ -27,31 +52,21 @@ Rails.application.routes.draw do
   # get 'ingredients/:id', to: 'ingredients#show', as: 'ingredient'
   #resource :ingredients
 
-  #drink_comments
+
   
-  get 'drink_comments', to: 'drink_comment#index', as: 'drink_comments'
-  get 'drink_comments/new', to: 'drink_comment#new', as: 'new_drink_comment'
-  get 'drink_comments/:id', to: 'drink_comment#show', as: 'drink_comment'
-  #get 'drink_comments/:recipe_id', to: 'recipes#show', as: 'comment_recipe'
-
-  post 'drink_comments', to: 'drink_comment#create'
-  get 'drink_comments/:id/edit', to: 'drink_comment#edit', as: 'edit_drink_comment'
-  patch 'drink_comments/:id', to: 'drink_comment#update'
-  delete 'drink_comments/:id', to: 'drink_comment#destroy'
-
-  #get 'recipes/:id', to: 'recipes#show', as: 'recipe'
   
 
 
   # user_profile routes
-  get 'user_profiles/:id/show', to: 'user_profile#show', as: 'show_profile'
-  get 'user_profiles/login', to: 'user_profile#login', as: 'login'
-  post 'user_profiles/login', to: 'user_profile#check_account'
-  get 'user_profiles/logout', to: 'user_profile#logout', as: 'logout'
+  get 'sessions/new'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   get 'user_profiles/:id', to: 'user_profile#index', as: 'profile'
   get 'user_profiles', to: 'user_profile#new', as: 'new_profile'
   post 'user_profiles', to: 'user_profile#create'
   get 'user_profiles/:id/edit', to: 'user_profile#edit', as: 'edit_profile'
+  get 'user_profiles/:id/show', to: 'user_profile#show', as: 'show_profile'
   patch 'user_profiles/:id/edit', to: 'user_profile#update'
   put 'user_profiles/:id/edit', to: 'user_profile#update'
   delete 'user_profiles/:id/show', to: 'user_profile#destroy'

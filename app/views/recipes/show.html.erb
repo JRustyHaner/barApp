@@ -5,7 +5,7 @@
   
   <p><h2><%= @recipe.drinkName%></h2></p>
   <p><b><%= @recipe.description %></b></p>
-      <% fbhref = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.barapp.com%3A3000"+ recipe_path(@recipe)  %>
+      <% fbhref = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.barapp.com%3A3000"+recipe_path(@recipe)  %>
       <div class="fb-share-button" 
           data-href="http://www.barapp.com:3000" 
           data-layout="button" data-size="large">
@@ -13,6 +13,7 @@
             href= <%= fbhref %>%
             class="fb-xfbml-parse-ignore">Share Recipe</a>
       </div>
+
   <div align="center">
 
     <%= image_tag (@recipe.image.url(:thumb)) if @recipe.image.exists?%>
@@ -37,17 +38,18 @@
     <% end %>  
   </div> 
 
-<div align="right">
-   <p> <%= link_to 'Add Comment' , new_drink_comment_path(@drink_comments) %> </p>
+<div align="center">
+     <p> <%=  link_to  'Add Review on Drink ' , new_drink_comments_path(@recipe), class:"btn btn-info btn-sm"%> </p> 
 </div>
 
 <div align="center">
   <table>
     <thead>
       <tr>
-        <th>Review Comment</th>
-        <th>Like Drink</th>
-        <th>Review Date</th>
+          <th>Review Comment</th>
+          <th>Like Drink</th>
+          <th>Review Date</th> 
+          <th>           </th>              
       </tr>
     </thead>
 
@@ -57,18 +59,28 @@
           <td><%=  review.comment  %></td>
           <td><%=  review.likeStatus%></td>
           <td><%=  review.reviewDate %></td>
-        </tr>
-      <% end %>
+          <td> 
+            <%= link_to 'Edit', edit_drink_comment_path(review), class:"btn btn-primary btn-sm" %> 
+            <%= link_to 'Destroy', drink_comment_path(review), method: :delete , class:"btn btn-danger btn-sm" %>
+          </td>
+          </tr>
+        <% end %>
     </tbody>
   </table>
-</div> 
+</div>
 
 <div align="center">
-  <p><%= link_to 'Download Recipe as PDF', show_gen_pd_fs_path(@recipe, format: :pdf) %></p>
-  <p><%= link_to 'Like this Drink', new_drink_comment_path %></p>
-  <p><%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
-  <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure you want to delete '+@recipe.drinkName+'?' } %></p>
-  <p><%= link_to 'Back' , recipes_path %>
+  <div class="col-md-10">
+    <%= link_to 'Recipe PDF', show_gen_pd_fs_path(@recipe, format: :pdf), class:"btn btn-info btn-sm" %>
+    <%= link_to 'Like this Drink', new_drink_comments_path(@recipe), class:"btn btn-primary btn-sm" %>
+  </div>  
+  <% if (@recipe.userprofile_id == session[:current_user_id].to_i ) %>
+    <div class="col-md-10"><%= link_to 'Edit Recipe' , edit_recipe_path(@recipe), class:"btn btn-primary btn-sm" %> 
+      <%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure you want to delete '+@recipe.drinkName+'?' }, class:"btn btn-danger btn-sm" %>
+    </div>
+  <% end %>
+  <br/>
+  <p><%= link_to 'Back' , list_index_path %>
 </div>  
 
 </main><!-- /.container -->

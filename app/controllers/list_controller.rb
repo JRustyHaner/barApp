@@ -15,10 +15,10 @@ class ListController < ApplicationController
         @drinks = Recipe.where(specialDate: params[:occasion])
     end
     def top
-        @drinks = Recipe.order(created_at: :asc).limit(10)
+        @drinks = Recipe.left_joins(:reviews).group(:id).order('COUNT(drink_comments.id) DESC').limit(10)
     end   
     def new
-        @drinks = Recipe.order(created_at: :asc).reverse_order.limit(10)
+        @drinks = Recipe.order(created_at: :asc).limit(10)
 
     end
 

@@ -4,8 +4,10 @@ class RecipesController < ApplicationController
         
     end
     def show
-        @recipe = Recipe.includes(:ingredients).find(params[:id])
         @recipe_comment=Recipe.includes(:reviews).find(params[:id])
+        @recipe = Recipe.includes(:ingredients).find(params[:id])
+       
+        #renders 'recipe/show.html.erb'
     end
     def recipe_params
         params.require(:recipe).permit(:drinkName, :drinkType, :specialDate, :drinkLocation, :drinkDate, :description, :image)
@@ -17,7 +19,13 @@ class RecipesController < ApplicationController
     end
     def create
         @recipe = Recipe.new(recipe_params)
-        if @recipe.save
+        begin
+            @user_profile = UserProfile.includes(:drinks).find(session[:current_user_id])    
+        rescue => exception
+            redirect_to home_url, notice: "User not found. Please log in."
+        end
+        @user_profile.drinks.append @recipe
+        if @user_profile.save
             
             redirect_to recipe_url(@recipe), notice: "Recipe record was successfully created."
         else
@@ -26,12 +34,15 @@ class RecipesController < ApplicationController
         end
     end
     def edit
+        
         begin
             @recipe = Recipe.find(params[:id])    
         rescue => exception
             redirect_to recipes_url, alert: "Error: Recipe not found."
         end
-        
+        if (@recipe.userprofile_id != session[:current_user_id].to_i)
+            redirect_to list_index_url, alert: "Not your recipe."
+        end        
         #renders 'recipe/edit.html.erb'
     end
     def update

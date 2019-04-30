@@ -20,13 +20,13 @@
   - Description: As an account-holder, I should be add a drink recipe, so that I view it later and share with other users.
   - Estimate: 1
   - Priority: 60
-  - Status: Not started
+  - Status: Completed
  
 - US 04 View Drink Recipe
   - Description: As an account-holder, I should be able to view the drink recipe,so that I can know how it was prepared.
   - Estimate: 1
   - Priority: 60
-  - Status: Not started
+  - Status: Completed
  
 - US 05 Like Drink Recipes
   - Description: As an account-holder, I should be able to like a drink recipe shared by other account-holders, so that other account-holder know I like the recipe.
@@ -38,7 +38,7 @@
   - Description: As an account-holder, I should be able to view ingredients used in a drink, so that I know what ingredients are used to make the drink.
   - Estimate: 1
   - Priority: 60
-  - Status: Not started
+  - Status: Completed
  
 - US 07 Comment on Recipes
   - Description: As an account-holder, I should be able to comment on recipes, so that I can express my opinion on the drink recipe.
@@ -78,13 +78,13 @@
   - Description: As an account-holder, I should be able to login to the BarApp account, so that I can view, search and share the drinks and search the bars.
   - Estimate: 1
   - Priority: 40
-  - Status: Not started
+  - Status: Completed
  
 - US 13 Create account
   - Description: As a visitor, I should be able to create an account, so I can get access to the activities of BarApp.
   - Estimate: 1
   - Priority: 40
-  - Status: Not started
+  - Status: Completed
 
 - US 14 Update account
   - Description: As a visitor, I should be able to update my account and profile information, so I can keep my profile current.
@@ -115,6 +115,20 @@
 
 - US 18 Delete account
   - Description: As an account-holder, I should be able to delete an account, so I can delete my account from BarApp.
+  - Estimate: 1
+  - Priority: 90
+  - Status: Not started  
+  
+  ## Additional User Stories
+  
+ - US19 Add ingredients to a Drink Recipe
+  - Description: As an account-holder, I should be able to add the ingredients for a drink recipe, so insure the recipe has the right ingredients.
+  - Estimate: 1
+  - Priority: 90
+  - Status: Not started  
+
+- US20 Modify ingredients to a Drink Recipe
+  - Description: As an account-holder, I should be able to modify the ingredients for a drink recipe, so insure the recipe has the right ingredients.
   - Estimate: 1
   - Priority: 90
   - Status: Not started  
