@@ -32,7 +32,8 @@ div.field {
 }  
 
 div.actions {
-  padding-top: 1.5rem;
+  text-align: center;
+  padding-top: 1.5em;
   padding-bottom: 0.5rem;
 }  
 
@@ -58,6 +59,7 @@ th, td {
   height: 50px;
   text-align: center;
 }
+
 .navbar{
   padding:0.5rem 0rem;
 }
@@ -72,8 +74,13 @@ th, td {
 .col-thead{
   background-color: #f5f3f3;
   font-weight: bold;
+
 }
 .row-large{
   min-height:50px;
   vertical-align: middle;
+}
+.form-check-inline input{
+  margin-left:10px;
+
 }
