@@ -2,7 +2,7 @@
 <% title @recipe.drinkName%>
 <h1>Edit Drink Recipe for <%= @recipe.drinkName %> </h1>
 
-<%= render 'form', recipe: @recipe %>
+    <%= render 'form', recipe: @recipe %>
 
 <p><h3>Ingredients</h3></p>   
   <div class="row">
@@ -11,6 +11,7 @@
             <div class="col-md-4 col-thead">Action</div>
         </div>
     <% @recipe.ingredients.each do |ingredient| %>
+
       
         <div class="row row-large">
             <div class="col-md-2"><%= ingredient.amount %> <%= ingredient.measurement %> </div>
@@ -25,4 +26,6 @@
 <p><%= link_to 'Add ingredient', new_ingredient_path(@recipe),class:"btn btn-primary" %></p>
 
 
-</main><!-- /.container -->
+
+
+</main><!-- /.contain
