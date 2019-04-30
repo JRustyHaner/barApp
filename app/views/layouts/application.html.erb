@@ -10,84 +10,84 @@
   </head>
 
   <body>
- <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
-      <%= link_to 'BarApp', home_path, class:'navbar-brand' %>
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+        <%= link_to 'BarApp', home_path, class:'navbar-brand' %>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item <%= active_class(home_path) %>">
-            <%= link_to 'Home', home_path, class:'nav-link' %>
-          </li>    
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item <%= active_class(home_path) %>">
+              <%= link_to 'Home', home_path, class:'nav-link' %>
+            </li>    
 
-          <% if $logged_in == 'true' %>        
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Recipes
-                </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            
-                <a class="dropdown-item" href=<%= new_recipe_path %>>Add a Drink Recipe.</a>
-                <a class="dropdown-item" href=<%= drink_comments_path %>>View all Comments.</a>
+            <% if $logged_in == 'true' %>        
+              <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Recipes
+                  </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              
+                  <a class="dropdown-item" href=<%= new_recipe_path %>>Add a Drink Recipe.</a>
+                  
+                </div>
               </div>
-            </div>
-            
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Lists
-                </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href=<%= list_top_ten_path %>>List Top 10 Recipes.</a>
-                <a class="dropdown-item" href=<%= list_new_path %>>List of New Recipes</a>
-                <a class="dropdown-item" href=<%= list_index_path %>>List/Search All Drink Recipes.</a>
-                <a class="dropdown-item" href=<%= list_bar_path %>>List Bars with Drink Recipes</a>
+              
+              <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lists
+                  </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href=<%= list_top_ten_path %>>List Top 10 Recipes.</a>
+                  <a class="dropdown-item" href=<%= list_new_path %>>List of New Recipes</a>
+                  <a class="dropdown-item" href=<%= list_index_path %>>List/Search All Drink Recipes.</a>
+                  <a class="dropdown-item" href=<%= list_bar_path %>>List Bars with Drink Recipes</a>
 
-              </div>
-            </div>  
+                </div>
+              </div>  
 
 
+            <% end %>
+          </div>
+          </ul>
+
+          <ul class= "navbar-nav navbar-right">
+          <% if $logged_in == 'true' %>          
+            <li class="nav-item <%= active_class(logout_path) %>">
+              <%= link_to 'LogOut' , logout_path, class:'nav-link' %>
+            </li>
+          <% else %>
+            <li class="nav-item <%= active_class(login_path) %>">
+              <%= link_to 'Login' , login_path, class:'nav-link' %>
+            </li>
+            <li class="nav-item <%= active_class(new_profile_path) %>">
+              <%= link_to 'SignUp' , new_profile_path, class:'nav-link' %>
+            </li>
           <% end %>
+
+          </ul>
+
         </div>
-        </ul>
+      </nav>
 
-        <ul class= "navbar-nav navbar-right">
-        <% if $logged_in == 'true' %>          
-          <li class="nav-item <%= active_class(logout_path) %>">
-            <%= link_to 'LogOut' , logout_path, class:'nav-link' %>
-          </li>
-        <% else %>
-          <li class="nav-item <%= active_class(login_path) %>">
-            <%= link_to 'Login' , login_path, class:'nav-link' %>
-          </li>
-          <li class="nav-item <%= active_class(new_profile_path) %>">
-            <%= link_to 'SignUp' , new_profile_path, class:'nav-link' %>
-          </li>
-        <% end %>
+      <% if flash[:notice] %>
+        <div class="alert alert-success" role="alert">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
 
-        </ul>
+      <% if flash[:alert] %>
+        <div class="alert alert-danger" role="alert">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
 
-      </div>
-    </nav>
-
-    <% if flash[:notice] %>
-      <div class="alert alert-success" role="alert">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-
-    <% if flash[:alert] %>
-      <div class="alert alert-danger" role="alert">
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
-
-    <main role="main" class="container">
-      <div class="starter-template">
-        <%= yield %>
-      </div>
-    </main>
+      <main role="main" class="container">
+        <div class="starter-template">
+          <%= yield %>
+        </div>
+      </main>
   </body>
 </html>
