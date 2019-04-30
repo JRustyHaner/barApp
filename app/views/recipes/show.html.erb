@@ -5,7 +5,7 @@
   
   <p><h2><%= @recipe.drinkName%></h2></p>
   <p><b><%= @recipe.description %></b></p>
-      <% fbhref = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.barapp.com%3A3000"+ recipe_path(@recipe)  %>
+      <% fbhref = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.barapp.com%3A3000"+recipe_path(@recipe)  %>
       <div class="fb-share-button" 
           data-href="http://www.barapp.com:3000" 
           data-layout="button" data-size="large">
@@ -39,7 +39,7 @@
   </div> 
 
 <div align="center">
-     <p> <%=  link_to  'Add Review on Drink ' , new_drink_comments_path(@recipe) %> </p> 
+     <p> <%=  link_to  'Add Review on Drink ' , new_drink_comments_path(@recipe), class:"btn btn-info btn-sm"%> </p> 
 </div>
 
 <div align="center">
@@ -48,9 +48,8 @@
       <tr>
           <th>Review Comment</th>
           <th>Like Drink</th>
-          <th>Review Date</th>
-          <th>Action</th>
-                 
+          <th>Review Date</th> 
+          <th>           </th>              
       </tr>
     </thead>
 
@@ -61,8 +60,8 @@
           <td><%=  review.likeStatus%></td>
           <td><%=  review.reviewDate %></td>
           <td> 
-            <%= link_to 'Edit', edit_drink_comment_path(review) %> 
-            <%= link_to 'Destroy', drink_comment_path(review), method: :delete %>
+            <%= link_to 'Edit', edit_drink_comment_path(review), class:"btn btn-primary btn-sm" %> 
+            <%= link_to 'Destroy', drink_comment_path(review), method: :delete , class:"btn btn-danger btn-sm" %>
           </td>
           </tr>
         <% end %>
