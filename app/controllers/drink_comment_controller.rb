@@ -81,9 +81,7 @@ class DrinkCommentController < ApplicationController
           redirect_to recipes_url, alert: 'Error: Drink comment not found'
         end
         @recipesss = @drink_comments.recipes
-        # @drink_comments.destroy
-        # redirect_to recipe_url(@recipesss), notice: 'Review on Drink was successfully removed.'
-        
+                
         if (@drink_comments.userprofile_id == session[:current_user_id].to_i)
             @drink_comments.destroy
             redirect_to recipe_url(@recipesss), notice: 'Review on Drink was successfully removed.'
