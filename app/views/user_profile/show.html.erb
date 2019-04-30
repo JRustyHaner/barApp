@@ -23,7 +23,7 @@
     <p><b>Role:</b> <%= @user_profile.role %></p>
 
     <p>
-        <%= link_to 'Back', profile_path(@user_profile) %> |
-        <%= link_to 'Edit', edit_profile_path(@user_profile) %> |
-        <%= link_to 'Destroy', show_profile_path(@user_profile), method: :delete %>        
+        <%= link_to 'Back', profile_path(@user_profile), class:"btn btn-success btn-sm" %> |
+        <%= link_to 'Edit', edit_profile_path(@user_profile), class:"btn btn-primary btn-sm" %> |
+        <%= link_to 'Delete account', show_profile_path(@user_profile), method: :delete, data: { confirm: 'Are you sure you want to remove your account?' } , class:"btn btn-danger btn-sm" %>        
     </p>
