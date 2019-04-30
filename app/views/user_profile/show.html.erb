@@ -1,29 +1,50 @@
 <% provide(:title, 'User Profile') %>
 
-    <h1>Profile Information</h1>
+   
+     <h1>Profile Information</h1>
+     <br>
+    <div class="col-md-12">
+        <div class="col-md-12 col-thead">
+            Name
+        </div>
+        <div class="row">
+        <div class="col-md-12">
+             <h3><%= @user_profile.name %></h3>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-3 col-thead">City</div>
+        <div class="col-md-3 col-thead">State</div>
+        <div class="col-md-3 col-thead">Country</div>
+        <div class="col-md-3 col-thead">Zip/Post Code</div>
+        </div>
+        <div class="row">
+        <div class="col-md-3"><%= @user_profile.name %></div>
+        <div class="col-md-3"><%= @user_profile.state %></div>
+        <div class="col-md-3"><%= @user_profile.country %></div>
+        <div class="col-md-3"><%= @user_profile.zipcode %></div>
+        </div>
+        <div class="row">
+        <div class="col-md-3 col-thead">Mobile</div>
+        <div class="col-md-3 col-thead">Email</div>
+        <div class="col-md-3 col-thead">Business Status</div>
+        <div class="col-md-3 col-thead">BarApp Role</div>
+        </div>
+        <div class="row">
+        <div class="col-md-3"><%= @user_profile.mobile %></div>
+        <div class="col-md-3"><a href="mailto:<%= @user_profile.email %>"><%= @user_profile.email %></a></div>
+        <div class="col-md-3"><%= @user_profile.isBusiness %></div>
+        <div class="col-md-3"><%= @user_profile.role %></div>
+        </div>
+     
+         
+	</div>
 
-    <p><b>Name:</b> <%= @user_profile.name %></p>
-
-    <p><b>Address:</b> <%= @user_profile.address %></p>
-
-    <p><b>City:</b> <%= @user_profile.city %></p>
-
-    <p><b>State:</b> <%= @user_profile.state %></p>
-
-    <p><b>ZipCode:</b> <%= @user_profile.zipcode %></p>
-
-    <p><b>Country:</b> <%= @user_profile.country %></p>
-
-    <p><b>Mobile:</b> <%= @user_profile.mobile %></p>
-
-    <p><b>Email:</b> <%= @user_profile.email %></p>
-
-    <p><b>IsBusiness:</b> <%= @user_profile.isBusiness %></p>
-
-    <p><b>Role:</b> <%= @user_profile.role %></p>
-
+   <br>
     <p>
+
         <%= link_to 'Back', profile_path(@user_profile), class:"btn btn-success btn-sm" %> |
         <%= link_to 'Edit', edit_profile_path(@user_profile), class:"btn btn-primary btn-sm" %> |
         <%= link_to 'Delete account', show_profile_path(@user_profile), method: :delete, data: { confirm: 'Are you sure you want to remove your account?' } , class:"btn btn-danger btn-sm" %>        
+
     </p>

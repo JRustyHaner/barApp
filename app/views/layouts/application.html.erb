@@ -17,6 +17,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
+
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
             <% if session[:current_user_id].to_i >0 %>    
@@ -27,6 +28,7 @@
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href=<%= new_recipe_path %>>Add a Drink Recipe.</a>
                   </div>
+
               </div>
 
               <div class="dropdown">
