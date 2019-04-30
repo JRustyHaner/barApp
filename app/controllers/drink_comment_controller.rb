@@ -17,6 +17,7 @@ class DrinkCommentController < ApplicationController
 
         end
         @drink_comments = DrinkComment.new
+        @drink_comments.reviewDate = Time.current
         #render drink_comments//new.html.erb'
     end
 
