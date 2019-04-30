@@ -14,72 +14,72 @@
  * // = require_self
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
+ @import "bootstrap";
 
-body {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
 
-.starter-template {
-    padding: 3rem 1.5rem;
-    text-align: center;
-  }
+ body {
+   padding-left: 1.5rem;
+   padding-right: 1.5rem;
+ }
  
-div.field {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}  
-
-div.actions {
-  text-align: center;
-  padding-top: 1.5em;
-  padding-bottom: 0.5rem;
-}  
-
-label,
-  input {
-    display: block;
-}
-
-div.invalid-feedback {
-  display: block;
-}
-
-
-table, th, td {
-  border: 2px solid black;
-}
-table {
-  width: 100%;
-}
-
-th, td {
-  padding: 25px;
-  height: 50px;
-  text-align: center;
-}
-
-.navbar{
-  padding:0.5rem 0rem;
-}
-.navbar-brand{
-  padding-left:0.5rem;
-}
-
-.col-centered{
-  float: none;
-  margin: 0 auto;
-}
-.col-thead{
-  background-color: #f5f3f3;
-  font-weight: bold;
-  text-align: left;
-}
-.row-large{
-  min-height:50px;
+ .starter-template {
+     padding: 3rem 1.5rem;
+     text-align: center;
+   }
   
-}
-.form-check-inline input{
-  margin-left:10px;
-}
+ div.field {
+   padding-top: 0.5rem;
+   padding-bottom: 0.5rem;
+ }  
+ 
+ div.actions {
+   padding-top: 1.5rem;
+   padding-bottom: 0.5rem;
+ }  
+ 
+ label,
+   input {
+     display: block;
+ }
+ 
+ div.invalid-feedback {
+   display: block;
+ }
+ 
+ 
+ table, th, td {
+   border: 2px solid black;
+ }
+ table {
+   width: 100%;
+ }
+ 
+ th, td {
+   padding: 25px;
+   height: 50px;
+   text-align: center;
+ }
+ .navbar{
+   padding:0.5rem 0rem;
+ }
+ .navbar-brand{
+   padding-left:0.5rem;
+ }
+ 
+ .col-centered{
+   float: none;
+   margin: 0 auto;
+ }
+ .col-thead{
+   background-color: #f5f3f3;
+   font-weight: bold;
+   text-align: left;
+ }
+ .row-large{
+   min-height:50px;
+   
+ }
+ .form-check-inline input{
+   margin-left:10px;
+ }
+
