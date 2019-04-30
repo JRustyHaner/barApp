@@ -1,17 +1,7 @@
 <% provide(:title, 'User Profile') %>
 
-   
-     <h1>Profile Information</h1>
-     <br>
-    <div class="col-md-12">
-        <div class="col-md-12 col-thead">
-            Name
-        </div>
-        <div class="row">
-        <div class="col-md-12">
-             <h3><%= @user_profile.name %></h3>
-        </div>
-        </div>
+    <h1><%= @user_profile.name %> Profile </h1><br>
+    <div class="col-md-12">               
         <div class="row">
         <div class="col-md-3 col-thead">City</div>
         <div class="col-md-3 col-thead">State</div>
@@ -19,7 +9,7 @@
         <div class="col-md-3 col-thead">Zip/Post Code</div>
         </div>
         <div class="row">
-        <div class="col-md-3"><%= @user_profile.name %></div>
+        <div class="col-md-3"><%= @user_profile.city %></div>
         <div class="col-md-3"><%= @user_profile.state %></div>
         <div class="col-md-3"><%= @user_profile.country %></div>
         <div class="col-md-3"><%= @user_profile.zipcode %></div>
