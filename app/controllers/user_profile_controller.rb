@@ -2,6 +2,7 @@ class UserProfileController < ApplicationController
     $logged_in = 'false'
     def index
         @user_profile = UserProfile.find(params[:id])
+        session[:current_user_id] = params[:id]
         # render 'user_profile/index.html.erb'
     end
 
@@ -9,7 +10,7 @@ class UserProfileController < ApplicationController
         begin        
             @user_profile = UserProfile.find_by(email: params[:user_profile][:email].downcase)
             if @user_profile && @user_profile.password == params[:user_profile][:password]
-                $logged_in = 'true'                
+                $logged_in = 'true'          
                 redirect_to profile_url(@user_profile), notice: "Logged in Successfully."
             else
                 redirect_to home_url, alert: "Error: Invalid Email/Password."

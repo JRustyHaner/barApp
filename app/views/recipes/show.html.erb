@@ -13,6 +13,7 @@
             href= <%= fbhref %>%
             class="fb-xfbml-parse-ignore">Share Recipe</a>
       </div>
+
   <div align="center">
 
     <%= image_tag (@recipe.image.url(:thumb)) if @recipe.image.exists?%>
@@ -54,31 +55,33 @@
     </thead>
 
     <tbody>
-        <% @recipe_comment.reviews.each do |review|  %>
-          <tr>
-            <td><%=  review.comment  %></td>
-            <td><%=  review.likeStatus%></td>
-            <td><%=  review.reviewDate %></td>
-                        
-            <td> 
-             <%= link_to 'Edit', edit_drink_comment_path(review) %> 
-             <%= link_to 'Destroy', drink_comment_path(review), method: :delete %>
-            </td>
-
+      <% @recipe_comment.reviews.each do |review|  %>
+        <tr>
+          <td><%=  review.comment  %></td>
+          <td><%=  review.likeStatus%></td>
+          <td><%=  review.reviewDate %></td>
+          <td> 
+            <%= link_to 'Edit', edit_drink_comment_path(review) %> 
+            <%= link_to 'Destroy', drink_comment_path(review), method: :delete %>
+          </td>
           </tr>
         <% end %>
-      </tbody>
-    </table>
-  </div>
-    
+    </tbody>
+  </table>
+</div>
 
-
-
-
-  <div align="center">
-    <p> <%= link_to 'Edit Recipe' , edit_recipe_path(@recipe) %> </p>
-    <p><%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    <p> <%= link_to 'Back' , recipes_path %>
+<div align="center">
+  <div class="col-md-10">
+    <%= link_to 'Recipe PDF', show_gen_pd_fs_path(@recipe, format: :pdf), class:"btn btn-info btn-sm" %>
+    <%= link_to 'Like this Drink', new_drink_comments_path(@recipe), class:"btn btn-primary btn-sm" %>
   </div>  
+  <% if (@recipe.userprofile_id == session[:current_user_id].to_i ) %>
+    <div class="col-md-10"><%= link_to 'Edit Recipe' , edit_recipe_path(@recipe), class:"btn btn-primary btn-sm" %> 
+      <%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure you want to delete '+@recipe.drinkName+'?' }, class:"btn btn-danger btn-sm" %>
+    </div>
+  <% end %>
+  <br/>
+  <p><%= link_to 'Back' , list_index_path %>
+</div>  
 
 </main><!-- /.container -->

@@ -1,20 +1,26 @@
 <main role="main" class="container">
-    <h1>BarApp - New</h1>
+    <h1>Newest 10 Recipes</h1>
     
    <table class="table table-sm">
     <thead>
         <tr>
+            <th scope="col">Image</th>
             <th scope="col">Drink Name</th>
-            <th scope="col">Location</th>
+            <th scope="col">Drink Type</th>
+            <th scope="col">Origin</th>
             <th scope="col">Date Added</th>
+            <th scope="col">Comment Count</th>
         </tr>
     </thead>
     <tbody>
         <% @drinks.each do |drinks|%>
         <tr>
-            <th scope="row"><%= link_to drinks.drinkName, recipe_path(drinks) %></th>
+            <th scope="row"><%= image_tag(drinks.image) if drinks.image.exists? %></th>
+            <th><%= link_to drinks.drinkName, recipe_path(:id => drinks.id) %></th>
+            <th><%= drinks.drinkType %></th>
             <th><%= drinks.drinkLocation %></th>
             <th><%= drinks.drinkDate %></th>
+            <th><%= drinks.reviews.count %></th>
 
         </tr>
         <% end %>

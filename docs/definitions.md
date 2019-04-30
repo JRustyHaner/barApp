@@ -1,19 +1,10 @@
 # Definitions
 - Project: BarApp
 
-<<<<<<< HEAD
 ## User Types
 
 Account-holder - a user who holds an account in the BarApp and will be able to search, like and share the drink recipes.
 
-=======
-- Project: BarApp
-
-## User Types
-
-Account-holder - a user who holds an account in the BarApp and will be able to search, like and share the drink recipes.
-
->>>>>>> origin/master
 Administrator - a user who has the privileges to certain activities such as reviewing and deleting the user comments.
 
 Visitor - a user who can visit the BarApp website and can also create an account.
