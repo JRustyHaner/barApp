@@ -1,7 +1,13 @@
 <% provide(:title, 'User Profile') %>
 
     <h1><%= @user_profile.name %> Profile </h1><br>
-    <div class="col-md-12">               
+    <div class="col-md-12">
+        <div class="row">
+        <div class="col-md-3 col-thead">Address</div>
+        </div>
+        <div class="row">
+        <div class="col-md-3"><%= @user_profile.address %></div>        
+        </div>               
         <div class="row">
         <div class="col-md-3 col-thead">City</div>
         <div class="col-md-3 col-thead">State</div>

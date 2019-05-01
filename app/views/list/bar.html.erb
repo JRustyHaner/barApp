@@ -1,27 +1,25 @@
 <main role="main" class="container">
     <h1>BarApp - List Bars</h1>
-    
-   <table class="table table-sm">
-    <thead>
-        <tr>
-            <th scope="col">Bar Address</th>
-            <th scope="col">Contact</th>            
-            <th scope="col">Recipes</th>
-        </tr>
-    </thead>
-    <tbody>
+       
+   <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6 col-thead">Bar Address</div>
+            <div class="col-md-2 col-thead">Contact</div>
+            <div class="col-md-2 col-thead">Recipes</div>              
+        </div>
         <% @user_profiles.each do |user|%>
         <% if user.isBusiness %>
-        <tr>
-            <td><%= user.address%>,<%= user.city%>,<%= user.state%> <%= user.zipcode%></td>
-            <td><%= user.mobile%></td>
-            <td><% user.drinks.each do |recipe|%>
-            <%= link_to recipe.drinkName, recipe_path(recipe) %><br/>
-            <% end %></td>
-        </tr>
+            <div class="row">
+                <div class="col-md-6"><%= user.address%>,<%= user.city%>,<%= user.state%> <%= user.zipcode%></div>
+                <div class="col-md-2"><%= user.mobile%></div>
+                <div class="col-md-2">
+                    <% user.drinks.each do |recipe|%>
+                        <%= link_to recipe.drinkName, recipe_path(recipe) %><br/>
+                    <% end %>
+                </div>                
+            </div>
+        <% end %>    
         <% end %>
-        <% end %>
-    </tbody>
-   </table>
+    </div>
 
 </main>  
