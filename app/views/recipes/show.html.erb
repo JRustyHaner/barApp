@@ -59,9 +59,11 @@
           <td><%=  review.comment  %></td>
           <td><%=  review.likeStatus%></td>
           <td><%=  review.reviewDate %></td>
-          <td> 
-            <%= link_to 'Edit', edit_drink_comment_path(review), class:"btn btn-primary btn-sm" %> 
-            <%= link_to 'Remove', drink_comment_path(review), method: :delete, data: { confirm: 'Are you sure you want to remove the comment?' } , class:"btn btn-danger btn-sm" %>
+          <td>
+            <% if (review.userprofile_id.to_i == session[:user_id].to_i ) %> 
+              <%= link_to 'Edit', edit_drink_comment_path(review), class:"btn btn-primary btn-sm" %> 
+              <%= link_to 'Remove', drink_comment_path(review), method: :delete, data: { confirm: 'Are you sure you want to remove the comment?' } , class:"btn btn-danger btn-sm" %>
+            <% end %>
           </td>
           </tr>
         <% end %>
@@ -76,7 +78,7 @@
     <%= link_to 'Like this Drink', new_drink_comments_path(@recipe), class:"btn btn-primary btn-sm" %>
   </div>
   <br/>  
-  <% if (@recipe.userprofile_id == session[:current_user_id].to_i ) %>
+  <% if (@recipe.userprofile_id == session[:user_id].to_i ) %>
     <div class="col-md-10"><%= link_to 'Edit Recipe' , edit_recipe_path(@recipe), class:"btn btn-primary btn-sm" %> 
       <%= link_to 'Delete Recipe', @recipe, method: :delete, class:"btn btn-danger btn-sm" %>
     </div>

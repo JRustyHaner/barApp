@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
     def create
         @recipe = Recipe.new(recipe_params)
         begin
-            @user_profile = UserProfile.includes(:drinks).find(session[:current_user_id])    
+            @user_profile = UserProfile.includes(:drinks).find(session[:user_id])    
         rescue => exception
             redirect_to home_url, notice: "User not found. Please log in."
         end
@@ -40,7 +40,7 @@ class RecipesController < ApplicationController
         rescue => exception
             redirect_to recipes_url, alert: "Error: Recipe not found."
         end
-        if (@recipe.userprofile_id != session[:current_user_id].to_i)
+        if (@recipe.userprofile_id != session[:user_id].to_i)
             redirect_to list_index_url, alert: "Not your recipe."
         end        
         #renders 'recipe/edit.html.erb'
