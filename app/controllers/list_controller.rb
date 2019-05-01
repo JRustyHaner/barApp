@@ -5,8 +5,8 @@ class ListController < ApplicationController
     def country
         @drinks = Recipe.where(drinkLocation: params[:country])
     end
-    def ingredients
-        @drinks = Recipe.where(ingredients: {ingredientName: params[:ingredient]})
+    def ingredient
+        @drinks = Recipe.joins(:ingredients).where("ingredients.ingredientName LIKE ?", "%#{params[:ingredient]}%")
     end
     def type
         @drinks = Recipe.where(drinkType: params[:type])

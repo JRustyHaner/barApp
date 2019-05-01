@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   #get 'drink_comments', to: 'drink_comment#index', as: 'drink_comments'
   # get 'drink_comments/new', to: 'drink_comment#new', as: 'new_drink_comment'
   # get 'drink_comments/:id', to: 'drink_comment#show', as: 'drink_comment'
-  
 
  
   post 'drink_comments', to: 'drink_comment#create', as: 'drink_comments'
@@ -18,9 +17,6 @@ Rails.application.routes.draw do
   put 'drink_comments/:id', to: 'drink_comment#update'
   delete 'drink_comments/:id', to: 'drink_comment#destroy'
   
-
-
-
  
   # Recipe routes
   get 'recipes', to: 'recipes#index', as: 'recipes'
@@ -37,9 +33,6 @@ Rails.application.routes.draw do
   delete 'recipes/:id', to: 'recipes#destroy'
   resource :recipes
 
-
-
-  
  
   # Ingredient routes
   # get 'all_ingredients', to: 'ingredients#index', as: 'all_ingredients'
@@ -51,11 +44,7 @@ Rails.application.routes.draw do
   delete 'ingredients/:id', to: 'ingredients#destroy'
   # get 'ingredients/:id', to: 'ingredients#show', as: 'ingredient'
   #resource :ingredients
-
-
   
-  
-
 
   # user_profile routes
   get 'sessions/new'
