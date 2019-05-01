@@ -1,17 +1,13 @@
 <% provide(:title, 'User Profile') %>
 
-   
-     <h1>Profile Information</h1>
-     <br>
+    <h1><%= @user_profile.name %> Profile </h1><br>
     <div class="col-md-12">
-        <div class="col-md-12 col-thead">
-            Name
+        <div class="row">
+        <div class="col-md-3 col-thead">Address</div>
         </div>
         <div class="row">
-        <div class="col-md-12">
-             <h3><%= @user_profile.name %></h3>
-        </div>
-        </div>
+        <div class="col-md-3"><%= @user_profile.address %></div>        
+        </div>               
         <div class="row">
         <div class="col-md-3 col-thead">City</div>
         <div class="col-md-3 col-thead">State</div>
@@ -19,7 +15,7 @@
         <div class="col-md-3 col-thead">Zip/Post Code</div>
         </div>
         <div class="row">
-        <div class="col-md-3"><%= @user_profile.name %></div>
+        <div class="col-md-3"><%= @user_profile.city %></div>
         <div class="col-md-3"><%= @user_profile.state %></div>
         <div class="col-md-3"><%= @user_profile.country %></div>
         <div class="col-md-3"><%= @user_profile.zipcode %></div>
@@ -42,9 +38,7 @@
 
    <br>
     <p>
-
-        <%= link_to 'Back', profile_path(@user_profile), class:"btn btn-success btn-sm" %> |
-        <%= link_to 'Edit', edit_profile_path(@user_profile), class:"btn btn-primary btn-sm" %> |
-        <%= link_to 'Delete account', show_profile_path(@user_profile), method: :delete, data: { confirm: 'Are you sure you want to remove your account?' } , class:"btn btn-danger btn-sm" %>        
-
+        <%= link_to 'Back', profile_path(@user_profile), class:"btn btn-primary" %> 
+        <%= link_to 'Edit', edit_profile_path(@user_profile), class:"btn btn-primary" %> 
+        <%= link_to 'Delete Profile', show_profile_path(@user_profile), method: :delete, class:"btn btn-danger" %>        
     </p>
