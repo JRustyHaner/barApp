@@ -32,7 +32,7 @@ class DrinkCommentController < ApplicationController
         @recipe.reviews << @drink_comments
         
         begin
-            @user_profile = UserProfile.includes(:comments).find(session[:current_user_id])    
+            @user_profile = UserProfile.includes(:comments).find(session[:user_id].to_i)    
         rescue => exception
             redirect_to home_url, notice: "User not found. Please log in."
         end
@@ -54,7 +54,7 @@ class DrinkCommentController < ApplicationController
         @drink_comments = DrinkComment.find(params[:id])
         @recipess = @drink_comments.recipes
        
-        if (@drink_comments.userprofile_id != session[:current_user_id].to_i)
+        if (@drink_comments.userprofile_id != session[:user_id].to_i)
             redirect_to recipe_url(@recipess), alert: "Not your comment."
             ##redirect_to list_index_url, alert: "Not your comment."
         end
@@ -83,7 +83,7 @@ class DrinkCommentController < ApplicationController
         end
         @recipesss = @drink_comments.recipes
                 
-        if (@drink_comments.userprofile_id == session[:current_user_id].to_i)
+        if (@drink_comments.userprofile_id == session[:user_id].to_i)
             @drink_comments.destroy
             redirect_to recipe_url(@recipesss), notice: 'Review on Drink was successfully removed.'
         else

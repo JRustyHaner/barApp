@@ -40,5 +40,5 @@
     <p>
         <%= link_to 'Back', profile_path(@user_profile), class:"btn btn-primary" %> 
         <%= link_to 'Edit', edit_profile_path(@user_profile), class:"btn btn-primary" %> 
-        <%= link_to 'Delete Profile', show_profile_path(@user_profile), method: :delete, class:"btn btn-danger" %>        
+        <%= link_to 'Delete Profile', show_profile_path(@user_profile), method: :delete, data: { confirm: 'We hate to see you go. Are you sure you want to delete your account?' }, class:"btn btn-danger" %>        
     </p>
