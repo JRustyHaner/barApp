@@ -122,10 +122,10 @@
   ## Additional User Stories
   
  - US19 Add ingredients to a Drink Recipe
-  - Description: As an account-holder, I should be able to add the ingredients for a drink recipe, so insure the recipe has the right ingredients.
-  - Estimate: 1
-  - Priority: 90
-  - Status: Completed  
+   - Description: As an account-holder, I should be able to add the ingredients for a drink recipe, so insure the recipe has the right ingredients.
+   - Estimate: 1
+   - Priority: 90
+   - Status: Completed  
 
 - US20 Modify ingredients to a Drink Recipe
   - Description: As an account-holder, I should be able to modify the ingredients for a drink recipe, so insure the recipe has the right ingredients.
